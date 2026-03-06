@@ -1,0 +1,381 @@
+﻿env: load .env.local
+env: export NEXT_PUBLIC_SUPABASE_URL EXPO_PUBLIC_SUPABASE_URL NEXT_PUBLIC_SUPABASE_ANON_KEY EXPO_PUBLIC_SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME CLOUDINARY_API_KEY CLOUDINARY_API_SECRET UPSTASH_REDIS_REST_URL UPSTASH_REDIS_REST_TOKEN
+ΓÇ║ Building app...
+Configuration on demand is an incubating feature.
+> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:processResources NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:classes UP-TO-DATE
+> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:shared:compileJava NO-SOURCE
+> Task :gradle-plugin:shared:processResources NO-SOURCE
+> Task :gradle-plugin:shared:classes UP-TO-DATE
+> Task :gradle-plugin:shared:jar
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:jar
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:processResources
+> Task :gradle-plugin:settings-plugin:classes
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:jar
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:processResources
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:classes
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:jar
+> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :expo-module-gradle-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :expo-module-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-module-gradle-plugin:processResources
+> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:processResources
+> Task :expo-gradle-plugin:expo-autolinking-plugin:classes
+> Task :gradle-plugin:react-native-gradle-plugin:processResources
+> Task :gradle-plugin:react-native-gradle-plugin:classes
+> Task :expo-gradle-plugin:expo-autolinking-plugin:jar
+> Task :gradle-plugin:react-native-gradle-plugin:jar
+> Task :expo-module-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :expo-module-gradle-plugin:compileJava NO-SOURCE
+> Task :expo-module-gradle-plugin:classes
+> Task :expo-module-gradle-plugin:jar
+
+> Configure project :
+[32m[ExpoRootProject][0m Using the following versions:
+  - buildTools:  [32m35.0.0[0m
+  - minSdk:      [32m24[0m
+  - compileSdk:  [32m35[0m
+  - targetSdk:   [32m35[0m
+  - ndk:         [32m27.1.12297006[0m
+  - kotlin:      [32m2.0.21[0m
+  - ksp:         [32m2.0.21-1.0.28[0m
+
+> Configure project :expo
+
+Using expo modules
+  - [32mexpo-constants[0m (17.1.8)
+  - [32mexpo-modules-core[0m (2.5.0)
+  - [33m[?][0m [32mexpo-asset[0m (11.1.7)
+  - [33m[?][0m [32mexpo-document-picker[0m (55.0.8)
+  - [33m[?][0m [32mexpo-file-system[0m (18.1.11)
+  - [33m[?][0m [32mexpo-font[0m (13.3.2)
+  - [33m[?][0m [32mexpo-image-loader[0m (55.0.0)
+  - [33m[?][0m [32mexpo-image-picker[0m (55.0.10)
+  - [33m[?][0m [32mexpo-keep-awake[0m (14.1.4)
+  - [33m[?][0m [32mexpo-linking[0m (7.1.7)
+  - [33m[?][0m [32mexpo-location[0m (18.1.6)
+  - [33m[?][0m [32mexpo-splash-screen[0m (0.30.10)
+
+
+> Configure project :react-native-reanimated
+Android gradle plugin: 8.8.2
+Gradle: 8.13
+
+> Task :app:generateAutolinkingNewArchitectureFiles UP-TO-DATE
+> Task :app:generateAutolinkingPackageList UP-TO-DATE
+> Task :app:generateCodegenSchemaFromJavaScript SKIPPED
+> Task :app:generateCodegenArtifactsFromSchema SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugBuildConfig
+> Task :expo:generatePackagesList UP-TO-DATE
+> Task :expo:preBuild UP-TO-DATE
+> Task :expo:preDebugBuild UP-TO-DATE
+> Task :expo:writeDebugAarMetadata
+> Task :expo-constants:createExpoConfig
+> Task :expo-constants:preBuild
+> Task :expo-constants:preDebugBuild
+> Task :expo-modules-core:preBuild UP-TO-DATE
+> Task :expo-modules-core:preDebugBuild UP-TO-DATE
+> Task :expo-constants:writeDebugAarMetadata
+> Task :expo-modules-core:writeDebugAarMetadata
+> Task :react-native-async-storage_async-storage:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-async-storage_async-storage:preBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:preDebugBuild UP-TO-DATE
+> Task :react-native-maps:preBuild UP-TO-DATE
+> Task :react-native-maps:preDebugBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:writeDebugAarMetadata
+> Task :react-native-reanimated:assertMinimalReactNativeVersionTask SKIPPED
+> Task :react-native-maps:writeDebugAarMetadata
+> Task :react-native-reanimated:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-reanimated:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-reanimated:prepareReanimatedHeadersForPrefabs UP-TO-DATE
+> Task :react-native-reanimated:prepareWorkletsHeadersForPrefabs UP-TO-DATE
+> Task :react-native-reanimated:preBuild UP-TO-DATE
+> Task :react-native-reanimated:preDebugBuild UP-TO-DATE
+> Task :react-native-reanimated:writeDebugAarMetadata
+> Task :react-native-safe-area-context:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-safe-area-context:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-safe-area-context:preBuild UP-TO-DATE
+> Task :react-native-safe-area-context:preDebugBuild UP-TO-DATE
+> Task :react-native-safe-area-context:writeDebugAarMetadata
+> Task :react-native-screens:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-screens:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-screens:preBuild UP-TO-DATE
+> Task :react-native-screens:preDebugBuild UP-TO-DATE
+> Task :react-native-screens:writeDebugAarMetadata
+> Task :react-native-worklets:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-worklets:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-worklets:prepareHeaders UP-TO-DATE
+> Task :react-native-worklets:preBuild UP-TO-DATE
+> Task :react-native-worklets:preDebugBuild UP-TO-DATE
+> Task :react-native-worklets:writeDebugAarMetadata
+> Task :react-native-worklets-core:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-worklets-core:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-worklets-core:prepareHeaders UP-TO-DATE
+> Task :react-native-worklets-core:preBuild UP-TO-DATE
+> Task :react-native-worklets-core:preDebugBuild UP-TO-DATE
+> Task :react-native-worklets-core:writeDebugAarMetadata
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :expo:generateDebugResValues
+> Task :expo:generateDebugResources
+> Task :app:checkDebugAarMetadata FAILED
+> Task :expo:packageDebugResources
+
+[Incubating] Problems report is available at: file:///C:/Projects/middleman-upgrade/middleman/apps/native/android/build/reports/problems/problems-report.html
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:
+\Users\Vinay\AppData\Roami
+ng\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (:  
+  String) [], RemoteExc   
+ eption
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+FAILURE: Build failed 
+with an exception.
+
+* What went wrong:
+Execution failed for task 
+':app:checkDebugAarMetadat
+a'.
+> A failure occurred 
+while executing com.androi
+d.build.gradle.internal.ta
+sks.CheckAarMetadataWorkAc
+tion
+   > 4 issues were found 
+when checking AAR 
+metadata:
+     
+       1.  Dependency 'and
+roidx.activity:activity-kt
+x:1.11.0' requires 
+libraries and 
+applications that
+           depend on it 
+to compile against 
+version 36 or later of the
+           Android APIs.
+     
+           :app is 
+currently compiled 
+against android-35.
+     
+           Also, the 
+maximum recommended 
+compile SDK version for 
+Android Gradle
+           plugin 8.8.2 
+is 35.
+     
+           Recommended 
+action: Update this 
+project's version of the 
+Android Gradle
+           plugin to one 
+that supports 36, then 
+update this project to use
+           compileSdk of 
+at least 36.
+     
+           Note that 
+updating a library or 
+application's compileSdk 
+(which
+           allows newer 
+APIs to be used) can be 
+done separately from 
+updating
+           targetSdk 
+(which opts the app in to 
+new runtime behavior) and
+           minSdk (which 
+determines which devices 
+the app can be installed
+           on).
+     
+       2.  Dependency 'and
+roidx.activity:activity-kt
+x:1.11.0' requires 
+Android Gradle plugin 
+8.9.1 or higher.
+     
+           This build 
+currently uses Android 
+Gradle plugin 8.8.2.
+     
+       3.  Dependency 'and
+roidx.activity:activity:1.
+11.0' requires libraries 
+and applications that
+           depend on it 
+to compile against 
+version 36 or later of the
+           Android APIs.
+     
+           :app is 
+currently compiled 
+against android-35.
+     
+           Also, the 
+maximum recommended 
+compile SDK version for 
+Android Gradle
+           plugin 8.8.2 
+is 35.
+     
+           Recommended 
+action: Update this 
+project's version of the 
+Android Gradle
+           plugin to one 
+that supports 36, then 
+update this project to use
+           compileSdk of 
+at least 36.
+     
+           Note that 
+updating a library or 
+application's compileSdk 
+(which
+           allows newer 
+APIs to be used) can be 
+done separately from 
+updating
+           targetSdk 
+(which opts the app in to 
+new runtime behavior) and
+           minSdk (which 
+determines which devices 
+the app can be installed
+           on).
+     
+       4.  Dependency 'and
+roidx.activity:activity:1.
+11.0' requires Android 
+Gradle plugin 8.9.1 or 
+higher.
+     
+           This build 
+currently uses Android 
+Gradle plugin 8.8.2.
+
+* Try:
+> Run with --stacktrace 
+option to get the stack 
+trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to get 
+full insights.
+> Get more help at 
+https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 43s
+64 actionable tasks: 33 executed, 31 up-to-date
+Error: C:\Projects\middlem
+an-upgrade\middleman\apps\
+native\android\gradlew.bat
+ app:assembleDebug -x 
+lint -x test 
+--configure-on-demand 
+--build-cache -PreactNativ
+eDevServerPort=8081 -Preac
+tNativeArchitectures=x86_6
+4,arm64-v8a exited with 
+non-zero code: 1
+Error: C:\Projects\middlem
+an-upgrade\middleman\apps\
+native\android\gradlew.bat
+ app:assembleDebug -x 
+lint -x test 
+--configure-on-demand 
+--build-cache -PreactNativ
+eDevServerPort=8081 -Preac
+tNativeArchitectures=x86_6
+4,arm64-v8a exited with 
+non-zero code: 1
+    at ChildProcess.comple
+tionListener (C:\Projects\
+middleman-upgrade\middlema
+n\node_modules\@expo\spawn
+-async\src\spawnAsync.ts:6
+7:13)
+    at Object.onceWrapper 
+(node:events:634:26)
+    at ChildProcess.emit 
+(node:events:519:28)
+    at 
+ChildProcess.cp.emit (C:\P
+rojects\middleman-upgrade\
+middleman\node_modules\cro
+ss-spawn\lib\enoent.js:34:
+29)
+    at maybeClose (node:in
+ternal/child_process:1101:
+16)
+    at Process.ChildProces
+s._handle.onexit (node:int
+ernal/child_process:304:5)
+    ...
+    at spawnAsync (C:\Proj
+ects\middleman-upgrade\mid
+dleman\node_modules\@expo\
+spawn-async\src\spawnAsync
+.ts:28:21)
+    at spawnGradleAsync (C
+:\Projects\middleman-upgra
+de\middleman\node_modules\
+@expo\cli\src\start\platfo
+rms\android\gradle.ts:134:
+28)
+    at assembleAsync (C:\P
+rojects\middleman-upgrade\
+middleman\node_modules\@ex
+po\cli\src\start\platforms
+\android\gradle.ts:83:16)
+    at runAndroidAsync (C:
+\Projects\middleman-upgrad
+e\middleman\node_modules\@
+expo\cli\src\run\android\r
+unAndroidAsync.ts:62:24)

@@ -1,0 +1,89 @@
+# Dependencies
+node_modules
+.pnpm-store/
+
+# Turbo
+.turbo
+.turbo/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+coverage/
+
+# Expo & React Native
+.expo/
+apps/native/android/
+apps/native/ios/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Capacitor
+/apps/web/ios/
+/apps/web/android/
+.capacitor/
+
+# Environment variables
+.env
+.env.local
+.env.production.local
+.env.development.local
+.env.*.local
+
+# Misc
+.DS_Store
+Thumbs.db
+*.pem
+*.tsbuildinfo
+next-env.d.ts
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE & Tooling
+.vercel
+.idea/
+*.swp
+*.swo
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Text editor files
+reference.txt
+
+# Agent / Walkthrough logs
+*.resolved
+react_dom_ls*.txt
+supabase_test.js
+supabase_trigger_update.sql
+
+# Test and Audit Reports
+lh-*.json
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+
+# Random local logs & outputs
+error.txt
+output.txt
+report.txt
+report.json
+results.json
+build_err*.txt
+build_log*.txt
+test-out.txt
+test-error.txt
+seed_maps.js

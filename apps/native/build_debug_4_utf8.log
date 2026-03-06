@@ -1,0 +1,1208 @@
+﻿env: load .env.local
+env: export NEXT_PUBLIC_SUPABASE_URL EXPO_PUBLIC_SUPABASE_URL NEXT_PUBLIC_SUPABASE_ANON_KEY EXPO_PUBLIC_SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME CLOUDINARY_API_KEY CLOUDINARY_API_SECRET UPSTASH_REDIS_REST_URL UPSTASH_REDIS_REST_TOKEN
+ΓÇ║ Building app...
+Configuration on demand is an incubating feature.
+> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:checkKotlinGradlePluginConfigurationErrors
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:processResources NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:classes UP-TO-DATE
+> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:shared:compileJava NO-SOURCE
+> Task :gradle-plugin:shared:processResources NO-SOURCE
+> Task :gradle-plugin:shared:classes UP-TO-DATE
+> Task :gradle-plugin:shared:jar
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:jar
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:processResources
+> Task :gradle-plugin:settings-plugin:classes
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:jar
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:processResources
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:classes
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:jar
+> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :expo-module-gradle-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :expo-module-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-module-gradle-plugin:processResources
+> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:processResources
+> Task :expo-gradle-plugin:expo-autolinking-plugin:classes
+> Task :gradle-plugin:react-native-gradle-plugin:processResources
+> Task :gradle-plugin:react-native-gradle-plugin:classes
+> Task :expo-gradle-plugin:expo-autolinking-plugin:jar
+> Task :gradle-plugin:react-native-gradle-plugin:jar
+> Task :expo-module-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :expo-module-gradle-plugin:compileJava NO-SOURCE
+> Task :expo-module-gradle-plugin:classes
+> Task :expo-module-gradle-plugin:jar
+
+> Configure project :
+[32m[ExpoRootProject][0m Using the following versions:
+  - buildTools:  [32m35.0.0[0m
+  - minSdk:      [32m24[0m
+  - compileSdk:  [32m36[0m
+  - targetSdk:   [32m36[0m
+  - ndk:         [32m27.1.12297006[0m
+  - kotlin:      [32m2.0.21[0m
+  - ksp:         [32m2.0.21-1.0.28[0m
+WARNING: We recommend using a newer Android Gradle plugin to use compileSdk = 36
+
+This Android Gradle plugin (8.8.2) was tested up to compileSdk = 35.
+
+You are strongly encouraged to update your project to use a newer
+Android Gradle plugin that has been tested with compileSdk = 36.
+
+If you are already using the latest version of the Android Gradle plugin,
+you may need to wait until a newer version with support for compileSdk = 36 is available.
+
+For more information refer to the compatibility table:
+https://d.android.com/r/tools/api-level-support
+
+To suppress this warning, add/update
+    android.suppressUnsupportedCompileSdk=36
+to this project's gradle.properties.
+
+> Configure project :expo
+
+Using expo modules
+  - [32mexpo-constants[0m (17.1.8)
+  - [32mexpo-modules-core[0m (2.5.0)
+  - [33m[?][0m [32mexpo-asset[0m (11.1.7)
+  - [33m[?][0m [32mexpo-document-picker[0m (55.0.8)
+  - [33m[?][0m [32mexpo-file-system[0m (18.1.11)
+  - [33m[?][0m [32mexpo-font[0m (13.3.2)
+  - [33m[?][0m [32mexpo-image-loader[0m (55.0.0)
+  - [33m[?][0m [32mexpo-image-picker[0m (55.0.10)
+  - [33m[?][0m [32mexpo-keep-awake[0m (14.1.4)
+  - [33m[?][0m [32mexpo-linking[0m (7.1.7)
+  - [33m[?][0m [32mexpo-location[0m (18.1.6)
+  - [33m[?][0m [32mexpo-splash-screen[0m (0.30.10)
+
+
+> Configure project :react-native-reanimated
+Android gradle plugin: 8.8.2
+Gradle: 8.13
+
+> Task :app:generateAutolinkingNewArchitectureFiles UP-TO-DATE
+> Task :app:generateAutolinkingPackageList UP-TO-DATE
+> Task :app:generateCodegenSchemaFromJavaScript SKIPPED
+> Task :app:generateCodegenArtifactsFromSchema SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :expo:generatePackagesList UP-TO-DATE
+> Task :expo:preBuild UP-TO-DATE
+> Task :expo:preDebugBuild UP-TO-DATE
+> Task :expo:writeDebugAarMetadata UP-TO-DATE
+> Task :expo-constants:createExpoConfig
+> Task :expo-constants:preBuild
+> Task :expo-constants:preDebugBuild
+> Task :expo-constants:writeDebugAarMetadata UP-TO-DATE
+> Task :expo-modules-core:preBuild UP-TO-DATE
+> Task :expo-modules-core:preDebugBuild UP-TO-DATE
+> Task :expo-modules-core:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-async-storage_async-storage:preBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:preDebugBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-maps:preBuild UP-TO-DATE
+> Task :react-native-maps:preDebugBuild UP-TO-DATE
+> Task :react-native-maps:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-reanimated:assertMinimalReactNativeVersionTask SKIPPED
+> Task :react-native-reanimated:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-reanimated:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-reanimated:prepareReanimatedHeadersForPrefabs UP-TO-DATE
+> Task :react-native-reanimated:prepareWorkletsHeadersForPrefabs UP-TO-DATE
+> Task :react-native-reanimated:preBuild UP-TO-DATE
+> Task :react-native-reanimated:preDebugBuild UP-TO-DATE
+> Task :react-native-reanimated:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-safe-area-context:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-safe-area-context:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-safe-area-context:preBuild UP-TO-DATE
+> Task :react-native-safe-area-context:preDebugBuild UP-TO-DATE
+> Task :react-native-safe-area-context:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-screens:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-screens:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-screens:preBuild UP-TO-DATE
+> Task :react-native-screens:preDebugBuild UP-TO-DATE
+> Task :react-native-screens:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-worklets:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-worklets:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-worklets:prepareHeaders UP-TO-DATE
+> Task :react-native-worklets:preBuild UP-TO-DATE
+> Task :react-native-worklets:preDebugBuild UP-TO-DATE
+> Task :react-native-worklets:writeDebugAarMetadata UP-TO-DATE
+> Task :react-native-worklets-core:generateCodegenSchemaFromJavaScript UP-TO-DATE
+> Task :react-native-worklets-core:generateCodegenArtifactsFromSchema UP-TO-DATE
+> Task :react-native-worklets-core:prepareHeaders UP-TO-DATE
+> Task :react-native-worklets-core:preBuild UP-TO-DATE
+> Task :react-native-worklets-core:preDebugBuild UP-TO-DATE
+> Task :react-native-worklets-core:writeDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :expo:generateDebugResValues UP-TO-DATE
+> Task :expo:generateDebugResources UP-TO-DATE
+> Task :expo:packageDebugResources UP-TO-DATE
+> Task :expo-constants:generateDebugResValues UP-TO-DATE
+> Task :expo-constants:generateDebugResources UP-TO-DATE
+> Task :expo-constants:packageDebugResources UP-TO-DATE
+> Task :expo-modules-core:generateDebugResValues FROM-CACHE
+> Task :expo-modules-core:generateDebugResources FROM-CACHE
+> Task :app:checkDebugAarMetadata
+> Task :expo-modules-core:packageDebugResources
+> Task :react-native-async-storage_async-storage:generateDebugResValues FROM-CACHE
+> Task :react-native-async-storage_async-storage:generateDebugResources FROM-CACHE
+> Task :react-native-async-storage_async-storage:packageDebugResources
+> Task :react-native-maps:generateDebugResValues FROM-CACHE
+> Task :react-native-maps:generateDebugResources FROM-CACHE
+> Task :react-native-maps:packageDebugResources
+> Task :react-native-reanimated:generateDebugResValues FROM-CACHE
+> Task :react-native-reanimated:generateDebugResources FROM-CACHE
+> Task :react-native-reanimated:packageDebugResources
+> Task :react-native-safe-area-context:generateDebugResValues FROM-CACHE
+> Task :react-native-safe-area-context:generateDebugResources FROM-CACHE
+> Task :react-native-safe-area-context:packageDebugResources
+> Task :react-native-screens:generateDebugResValues FROM-CACHE
+> Task :react-native-screens:generateDebugResources
+> Task :react-native-screens:packageDebugResources
+> Task :react-native-worklets:generateDebugResValues FROM-CACHE
+> Task :react-native-worklets:generateDebugResources FROM-CACHE
+> Task :react-native-worklets:packageDebugResources
+> Task :react-native-worklets-core:generateDebugResValues FROM-CACHE
+> Task :react-native-worklets-core:generateDebugResources FROM-CACHE
+> Task :react-native-worklets-core:packageDebugResources FROM-CACHE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :expo:extractDeepLinksDebug FROM-CACHE
+> Task :expo-constants:extractDeepLinksDebug FROM-CACHE
+> Task :expo-modules-core:extractDeepLinksDebug FROM-CACHE
+> Task :react-native-async-storage_async-storage:extractDeepLinksDebug FROM-CACHE
+> Task :react-native-maps:extractDeepLinksDebug FROM-CACHE
+> Task :app:parseDebugLocalResources
+> Task :react-native-reanimated:extractDeepLinksDebug FROM-CACHE
+> Task :react-native-safe-area-context:extractDeepLinksDebug FROM-CACHE
+> Task :react-native-screens:extractDeepLinksDebug FROM-CACHE
+> Task :expo:processDebugManifest
+> Task :react-native-reanimated:processDebugManifest
+> Task :expo-constants:processDebugManifest
+
+> Task :expo-modules-core:processDebugManifest
+C:\Projects\middleman-upgrade\middleman\node_modules\expo-modules-core\android\src\main\AndroidManifest.xml:8:9-11:45 Warning:
+	meta-data#com.facebook.soloader.enabled@android:value was tagged at AndroidManifest.xml:8 to replace other declarations but no other declaration present
+
+> Task :react-native-maps:processDebugManifest
+
+> Task :react-native-async-storage_async-storage:processDebugManifest
+package="com.reactnativecommunity.asyncstorage" found in source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.reactnativecommunity.asyncstorage" from the source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml.
+
+> Task :react-native-safe-area-context:processDebugManifest
+package="com.th3rdwave.safeareacontext" found in source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\react-native-safe-area-context\android\src\main\AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.th3rdwave.safeareacontext" from the source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\react-native-safe-area-context\android\src\main\AndroidManifest.xml.
+
+> Task :react-native-worklets:extractDeepLinksDebug FROM-CACHE
+> Task :react-native-screens:processDebugManifest
+> Task :react-native-worklets-core:extractDeepLinksDebug FROM-CACHE
+
+> Task :react-native-worklets:processDebugManifest
+package="com.worklets" found in source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\react-native-worklets\android\src\main\AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.worklets" from the source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\react-native-worklets\android\src\main\AndroidManifest.xml.
+
+> Task :react-native-worklets-core:processDebugManifest
+package="com.worklets" found in source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\react-native-worklets-core\android\src\main\AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.worklets" from the source AndroidManifest.xml: C:\Projects\middleman-upgrade\middleman\node_modules\react-native-worklets-core\android\src\main\AndroidManifest.xml.
+
+> Task :expo:compileDebugLibraryResources
+
+> Task :app:processDebugMainManifest
+[:react-native-worklets] C:\Projects\middleman-upgrade\middleman\node_modules\react-native-worklets\android\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml Warning:
+	Namespace 'com.worklets' is used in multiple modules and/or libraries: :react-native-worklets, :react-native-worklets-core. Please ensure that all modules and libraries have a unique namespace. For more information, See https://developer.android.com/studio/build/configure-app-module#set-namespace
+C:\Projects\middleman-upgrade\middleman\apps\native\android\app\src\debug\AndroidManifest.xml:6:5-162 Warning:
+	application@android:usesCleartextTraffic was tagged at AndroidManifest.xml:6 to replace other declarations but no other declaration present
+C:\Projects\middleman-upgrade\middleman\apps\native\android\app\src\debug\AndroidManifest.xml Warning:
+	provider#expo.modules.filesystem.FileSystemFileProvider@android:authorities was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
+C:\Projects\middleman-upgrade\middleman\apps\native\android\app\src\debug\AndroidManifest.xml Warning:
+	activity#expo.modules.imagepicker.ExpoCropImageActivity@android:exported was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
+
+> Task :app:processDebugManifest
+> Task :expo-constants:compileDebugLibraryResources FROM-CACHE
+> Task :expo:parseDebugLocalResources
+> Task :expo-constants:parseDebugLocalResources FROM-CACHE
+> Task :expo-modules-core:compileDebugLibraryResources FROM-CACHE
+> Task :expo-modules-core:parseDebugLocalResources FROM-CACHE
+> Task :react-native-async-storage_async-storage:compileDebugLibraryResources FROM-CACHE
+> Task :expo-constants:generateDebugRFile
+> Task :expo:generateDebugRFile
+> Task :react-native-async-storage_async-storage:parseDebugLocalResources FROM-CACHE
+> Task :expo-modules-core:generateDebugRFile
+> Task :react-native-maps:compileDebugLibraryResources FROM-CACHE
+> Task :react-native-maps:parseDebugLocalResources FROM-CACHE
+> Task :react-native-async-storage_async-storage:generateDebugRFile
+> Task :react-native-reanimated:compileDebugLibraryResources FROM-CACHE
+> Task :react-native-reanimated:parseDebugLocalResources FROM-CACHE
+> Task :react-native-maps:generateDebugRFile
+> Task :react-native-safe-area-context:compileDebugLibraryResources FROM-CACHE
+> Task :react-native-safe-area-context:parseDebugLocalResources FROM-CACHE
+> Task :react-native-reanimated:generateDebugRFile
+> Task :react-native-safe-area-context:generateDebugRFile
+> Task :react-native-worklets:compileDebugLibraryResources FROM-CACHE
+> Task :react-native-screens:parseDebugLocalResources
+> Task :react-native-worklets:parseDebugLocalResources FROM-CACHE
+> Task :react-native-screens:compileDebugLibraryResources
+> Task :react-native-worklets-core:compileDebugLibraryResources FROM-CACHE
+> Task :react-native-screens:generateDebugRFile
+> Task :react-native-worklets-core:parseDebugLocalResources FROM-CACHE
+> Task :react-native-worklets:generateDebugRFile
+> Task :react-native-worklets-core:generateDebugRFile FROM-CACHE
+> Task :expo:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo:generateDebugBuildConfig
+> Task :expo-constants:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-constants:generateDebugBuildConfig
+> Task :expo-modules-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-modules-core:generateDebugBuildConfig
+> Task :expo-modules-core:javaPreCompileDebug
+> Task :expo-constants:javaPreCompileDebug
+> Task :expo:javaPreCompileDebug
+> Task :react-native-async-storage_async-storage:generateDebugBuildConfig
+> Task :react-native-async-storage_async-storage:javaPreCompileDebug FROM-CACHE
+
+> Task :react-native-async-storage_async-storage:compileDebugJavaWithJavac
+node.exe : Note: Some 
+input files use or 
+override a deprecated 
+API.
+At line:1 char:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\U
+sers\Vinay\AppData\Roa
+ming\ ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Note: Some   
+  inpu...deprecate    
+d API.:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+Note: Recompile with 
+-Xlint:deprecation 
+for details.
+Note: C:\Projects\midd
+leman-upgrade\middlema
+n\node_modules\@react-
+native-async-storage\a
+sync-storage\android\s
+rc\javaPackage\java\co
+m\reactnativecommunity
+\asyncstorage\AsyncSto
+ragePackage.java uses 
+unchecked or unsafe 
+operations.
+Note: Recompile with 
+-Xlint:unchecked for 
+details.
+
+> Task :react-native-maps:generateDebugBuildConfig
+> Task :react-native-maps:javaPreCompileDebug FROM-CACHE
+> Task :react-native-async-storage_async-storage:bundleLibCompileToJarDebug
+> Task :app:processDebugManifestForPackage
+> Task :expo-modules-core:compileDebugKotlin
+
+> Task :react-native-maps:compileDebugJavaWithJavac
+Note: Some input 
+files use or override 
+a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation 
+for details.
+Note: Some input 
+files use unchecked 
+or unsafe operations.
+Note: Recompile with 
+-Xlint:unchecked for 
+details.
+
+> Task :react-native-reanimated:generateDebugBuildConfig
+> Task :react-native-maps:bundleLibCompileToJarDebug
+> Task :react-native-reanimated:javaPreCompileDebug FROM-CACHE
+> Task :react-native-reanimated:packageNdkLibs NO-SOURCE
+
+> Task :react-native-reanimated:compileDebugJavaWithJavac
+Note: Some input 
+files use or override 
+a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation 
+for details.
+Note: Some input 
+files use unchecked 
+or unsafe operations.
+Note: Recompile with 
+-Xlint:unchecked for 
+details.
+
+> Task :react-native-safe-area-context:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :react-native-safe-area-context:generateDebugBuildConfig
+> Task :react-native-reanimated:bundleLibCompileToJarDebug
+> Task :react-native-safe-area-context:javaPreCompileDebug FROM-CACHE
+> Task :react-native-screens:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :react-native-screens:generateDebugBuildConfig
+> Task :react-native-screens:javaPreCompileDebug FROM-CACHE
+> Task :react-native-worklets:generateDebugBuildConfig
+> Task :react-native-worklets:javaPreCompileDebug FROM-CACHE
+> Task :app:processDebugResources
+
+> Task :react-native-worklets:compileDebugJavaWithJavac
+Note: Some input 
+files use or override 
+a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation 
+for details.
+
+> Task :react-native-worklets:bundleLibCompileToJarDebug
+> Task :react-native-worklets-core:generateDebugBuildConfig FROM-CACHE
+> Task :react-native-worklets-core:javaPreCompileDebug FROM-CACHE
+> Task :react-native-worklets-core:compileDebugJavaWithJavac FROM-CACHE
+> Task :app:javaPreCompileDebug FROM-CACHE
+> Task :react-native-worklets-core:bundleLibCompileToJarDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :expo:mergeDebugShaders
+> Task :expo:compileDebugShaders NO-SOURCE
+> Task :expo:generateDebugAssets UP-TO-DATE
+> Task :expo:packageDebugAssets
+> Task :expo-constants:mergeDebugShaders
+> Task :expo-constants:compileDebugShaders NO-SOURCE
+> Task :expo-constants:generateDebugAssets UP-TO-DATE
+> Task :expo-constants:packageDebugAssets
+> Task :expo-modules-core:mergeDebugShaders
+> Task :expo-modules-core:compileDebugShaders NO-SOURCE
+> Task :expo-modules-core:generateDebugAssets UP-TO-DATE
+> Task :expo-modules-core:packageDebugAssets
+> Task :react-native-async-storage_async-storage:mergeDebugShaders
+> Task :react-native-async-storage_async-storage:compileDebugShaders NO-SOURCE
+> Task :react-native-async-storage_async-storage:generateDebugAssets UP-TO-DATE
+> Task :react-native-async-storage_async-storage:packageDebugAssets
+> Task :react-native-maps:mergeDebugShaders
+> Task :react-native-maps:compileDebugShaders NO-SOURCE
+> Task :react-native-maps:generateDebugAssets UP-TO-DATE
+> Task :react-native-maps:packageDebugAssets
+> Task :react-native-reanimated:mergeDebugShaders
+> Task :react-native-reanimated:compileDebugShaders NO-SOURCE
+> Task :react-native-reanimated:generateDebugAssets UP-TO-DATE
+> Task :react-native-reanimated:packageDebugAssets
+> Task :react-native-safe-area-context:mergeDebugShaders
+> Task :react-native-safe-area-context:compileDebugShaders NO-SOURCE
+> Task :react-native-safe-area-context:generateDebugAssets UP-TO-DATE
+> Task :react-native-safe-area-context:packageDebugAssets
+> Task :react-native-screens:mergeDebugShaders
+> Task :react-native-screens:compileDebugShaders NO-SOURCE
+> Task :react-native-screens:generateDebugAssets UP-TO-DATE
+> Task :react-native-screens:packageDebugAssets
+> Task :react-native-worklets:mergeDebugShaders
+> Task :react-native-worklets:compileDebugShaders NO-SOURCE
+> Task :react-native-worklets:generateDebugAssets UP-TO-DATE
+> Task :react-native-worklets:packageDebugAssets
+> Task :react-native-worklets-core:mergeDebugShaders
+> Task :react-native-worklets-core:compileDebugShaders NO-SOURCE
+> Task :react-native-worklets-core:generateDebugAssets UP-TO-DATE
+> Task :react-native-worklets-core:packageDebugAssets
+
+> Task :react-native-safe-area-context:compileDebugKotlin
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-safe-area-context/android/src/main/java/com/th3rdwave/safeareacontext/SafeAreaView.kt:59:23 'val uiImplementation: UIImplementation!' is deprecated. Deprecated in Java.
+
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :react-native-async-storage_async-storage:bundleLibRuntimeToJarDebug
+> Task :react-native-worklets:bundleLibRuntimeToJarDebug
+> Task :react-native-maps:bundleLibRuntimeToJarDebug
+> Task :react-native-reanimated:bundleLibRuntimeToJarDebug
+> Task :react-native-safe-area-context:compileDebugJavaWithJavac
+> Task :react-native-safe-area-context:bundleLibCompileToJarDebug
+> Task :react-native-worklets-core:bundleLibRuntimeToJarDebug
+> Task :app:desugarDebugFileDependencies
+> Task :react-native-safe-area-context:bundleLibRuntimeToJarDebug
+> Task :react-native-async-storage_async-storage:processDebugJavaRes NO-SOURCE
+> Task :react-native-maps:processDebugJavaRes NO-SOURCE
+> Task :react-native-reanimated:processDebugJavaRes NO-SOURCE
+> Task :react-native-safe-area-context:processDebugJavaRes
+> Task :react-native-worklets:processDebugJavaRes NO-SOURCE
+> Task :react-native-worklets-core:processDebugJavaRes NO-SOURCE
+> Task :react-native-worklets-core:bundleLibRuntimeToDirDebug
+> Task :react-native-worklets:bundleLibRuntimeToDirDebug
+> Task :react-native-async-storage_async-storage:bundleLibRuntimeToDirDebug
+> Task :react-native-safe-area-context:bundleLibRuntimeToDirDebug
+> Task :react-native-reanimated:bundleLibRuntimeToDirDebug
+> Task :react-native-maps:bundleLibRuntimeToDirDebug
+> Task :app:checkDebugDuplicateClasses
+
+> Task :react-native-reanimated:configureCMakeDebug[arm64-v8a]
+Checking the license for package CMake 3.22.1 in C:\Users\Vinay\AppData\Local\Android\Sdk\licenses
+License for package CMake 3.22.1 accepted.
+Preparing "Install CMake 3.22.1 v.3.22.1".
+
+> Task :react-native-screens:compileDebugKotlin
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/RNScreensPackage.kt:66:17 'constructor(name: String, className: String, canOverrideExistingModule: Boolean, needsEagerInit: Boolean, hasConstants: Boolean, isCxxModule: Boolean, isTurboModule: Boolean): ReactModuleInfo' is deprecated. This constructor is deprecated and will be removed in the future. Use ReactModuleInfo(String, String, boolean, boolean, boolean, boolean)].
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/Screen.kt:46:77 Unchecked cast of '(androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior<android.view.View!>?..androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior<*>?)' to 'com.google.android.material.bottomsheet.BottomSheetBehavior<com.swmansion.rnscreens.Screen>'.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/Screen.kt:378:36 'fun setTranslucent(screen: Screen, activity: Activity?, context: ReactContext?): Unit' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/Screen.kt:397:36 'fun setColor(screen: Screen, activity: Activity?, context: ReactContext?): Unit' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/Screen.kt:415:36 'fun setNavigationBarColor(screen: Screen, activity: Activity?): Unit' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/Screen.kt:432:36 'fun setNavigationBarTranslucent(screen: Screen, activity: Activity?): Unit' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:217:31 'var targetElevation: Float' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:220:13 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:397:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:404:22 'fun onPrepareOptionsMenu(p0: Menu): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:407:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:412:22 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:7:8 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:210:9 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:212:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:214:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:7:8 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:204:14 'var statusBarColor: Int?' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:221:14 'var isStatusBarTranslucent: Boolean?' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:238:14 'var navigationBarColor: Int?' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:247:14 'var isNavigationBarTranslucent: Boolean?' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:382:48 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:383:49 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:384:45 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:385:52 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:386:48 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:387:51 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:388:56 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:389:57 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:390:51 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:55:42 'fun replaceSystemWindowInsets(p0: Int, p1: Int, p2: Int, p3: Int): WindowInsetsCompat' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:56:39 'val systemWindowInsetLeft: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:58:39 'val systemWindowInsetRight: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:59:39 'val systemWindowInsetBottom: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:102:53 'var statusBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:106:37 'var statusBarColor: Int?' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:113:48 'var statusBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:116:32 'var statusBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:162:49 'var isStatusBarTranslucent: Boolean?' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:218:43 'var navigationBarColor: Int?' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:218:72 'var navigationBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:224:16 'var navigationBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:241:55 'var isNavigationBarTranslucent: Boolean?' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:283:13 'fun setColor(screen: Screen, activity: Activity?, context: ReactContext?): Unit' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:285:13 'fun setTranslucent(screen: Screen, activity: Activity?, context: ReactContext?): Unit' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:289:13 'fun setNavigationBarColor(screen: Screen, activity: Activity?): Unit' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:290:13 'fun setNavigationBarTranslucent(screen: Screen, activity: Activity?): Unit' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:354:42 'var statusBarColor: Int?' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:356:48 'var isStatusBarTranslucent: Boolean?' is deprecated. For apps targeting SDK 35 or above this prop has no effect because edge-to-edge is enabled by default and the status bar is always translucent.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:359:57 'var navigationBarColor: Int?' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:360:63 'var isNavigationBarTranslucent: Boolean?' is deprecated. For all apps targeting Android SDK 35 or above edge-to-edge is enabled by default.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:5:8 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:142:9 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:144:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:146:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:148:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:150:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:152:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:154:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/bottomsheet/BottomSheetDialogRootView.kt:7:8 'object ReactFeatureFlags : Any' is deprecated. Use com.facebook.react.internal.featureflags.ReactNativeFeatureFlags instead.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/bottomsheet/BottomSheetDialogRootView.kt:25:13 'object ReactFeatureFlags : Any' is deprecated. Use com.facebook.react.internal.featureflags.ReactNativeFeatureFlags instead.
+
+> Task :react-native-reanimated:configureCMakeDebug[arm64-v8a]
+"Install CMake 3.22.1 v.3.22.1" ready.
+Installing CMake 3.22.1 in C:\Users\Vinay\AppData\Local\Android\Sdk\cmake\3.22.1
+"Install CMake 3.22.1 v.3.22.1" complete.
+"Install CMake 3.22.1 v.3.22.1" finished.
+
+> Task :expo-modules-core:compileDebugKotlin
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/expo-modules-core/android/src/main/java/expo/modules/apploader/AppLoaderProvider.kt:34:52 Unchecked cast of 'java.lang.Class<*>!' to 'java.lang.Class<out expo.modules.apploader.HeadlessAppLoader>'.
+
+> Task :expo-modules-core:compileDebugJavaWithJavac
+> Task :expo-modules-core:bundleLibCompileToJarDebug
+> Task :react-native-screens:compileDebugJavaWithJavac
+> Task :react-native-screens:bundleLibRuntimeToJarDebug
+> Task :react-native-screens:bundleLibCompileToJarDebug
+> Task :expo-modules-core:processDebugJavaRes
+> Task :react-native-screens:processDebugJavaRes
+> Task :expo-modules-core:bundleLibRuntimeToJarDebug
+> Task :expo-constants:compileDebugKotlin
+> Task :app:mergeExtDexDebug
+> Task :expo-constants:compileDebugJavaWithJavac
+> Task :expo-constants:bundleLibCompileToJarDebug
+> Task :expo-constants:bundleLibRuntimeToJarDebug
+> Task :expo-constants:processDebugJavaRes
+> Task :expo-constants:bundleLibRuntimeToDirDebug
+> Task :react-native-screens:bundleLibRuntimeToDirDebug
+
+> Task :expo:compileDebugKotlin
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/expo/android/src/main/java/expo/modules/fetch/ExpoFetchModule.kt:30:39 'constructor(reactContext: ReactContext): ForwardingCookieHandler' is deprecated. Use the default constructor.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/expo/android/src/main/java/expo/modules/fetch/NativeResponse.kt:41:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Projects/middleman-upgrade/middleman/node_modules/expo/android/src/main/java/expo/modules/fetch/NativeResponse.kt:43:11 'fun deallocate(): Unit' is deprecated. Use sharedObjectDidRelease() instead.
+
+> Task :expo-modules-core:bundleLibRuntimeToDirDebug
+> Task :react-native-reanimated:configureCMakeDebug[x86_64]
+> Task :expo:compileDebugJavaWithJavac
+> Task :expo:bundleLibRuntimeToJarDebug
+> Task :expo:processDebugJavaRes
+> Task :react-native-reanimated:generateJsonModelDebug
+> Task :expo:bundleLibCompileToJarDebug
+> Task :react-native-reanimated:prefabDebugConfigurePackage
+> Task :expo:bundleLibRuntimeToDirDebug
+> Task :app:compileDebugKotlin
+> Task :react-native-worklets:configureCMakeDebug[arm64-v8a]
+> Task :app:compileDebugJavaWithJavac
+> Task :app:dexBuilderDebug
+> Task :app:processDebugJavaRes
+> Task :app:mergeDebugGlobalSynthetics
+> Task :app:mergeProjectDexDebug
+
+> Task :app:mergeLibDexDebug FAILED
+ERROR: C:\Projects\mid
+dleman-upgrade\middlem
+an\node_modules\react-
+native-worklets\androi
+d\build\.transforms\41
+542d8722573273c5572fb9
+9d9edaeb\transformed\b
+undleLibRuntimeToDirDe
+bug\bundleLibRuntimeTo
+DirDebug_dex\com\workl
+ets\BuildConfig.dex: 
+D8: Type com.worklets.
+BuildConfig is 
+defined multiple 
+times: C:\Projects\mid
+dleman-upgrade\middlem
+an\node_modules\react-
+native-worklets\androi
+d\build\.transforms\41
+542d8722573273c5572fb9
+9d9edaeb\transformed\b
+undleLibRuntimeToDirDe
+bug\bundleLibRuntimeTo
+DirDebug_dex\com\workl
+ets\BuildConfig.dex, C
+:\Projects\middleman-u
+pgrade\middleman\node_
+modules\react-native-w
+orklets-core\android\b
+uild\.transforms\2e0a5
+9f9f0240ec33c7f8069e28
+4fc2e\transformed\bund
+leLibRuntimeToDirDebug
+\bundleLibRuntimeToDir
+Debug_dex\com\worklets
+\BuildConfig.dex
+com.android.builder.de
+xing.DexArchiveMergerE
+xception: Error while 
+merging dex archives: 
+Type com.worklets.Buil
+dConfig is defined 
+multiple times: C:\Pro
+jects\middleman-upgrad
+e\middleman\node_modul
+es\react-native-workle
+ts\android\build\.tran
+sforms\41542d872257327
+3c5572fb99d9edaeb\tran
+sformed\bundleLibRunti
+meToDirDebug\bundleLib
+RuntimeToDirDebug_dex\
+com\worklets\BuildConf
+ig.dex, C:\Projects\mi
+ddleman-upgrade\middle
+man\node_modules\react
+-native-worklets-core\
+android\build\.transfo
+rms\2e0a59f9f0240ec33c
+7f8069e284fc2e\transfo
+rmed\bundleLibRuntimeT
+oDirDebug\bundleLibRun
+timeToDirDebug_dex\com
+\worklets\BuildConfig.
+dex
+Learn how to resolve 
+the issue at https://d
+eveloper.android.com/s
+tudio/build/dependenci
+es#duplicate_classes.
+	at com.android.builde
+r.dexing.D8DexArchiveM
+erger.getMergingExcept
+ionToRethrow(D8DexArch
+iveMerger.java:235)
+	at com.android.builde
+r.dexing.D8DexArchiveM
+erger.mergeDexArchives
+(D8DexArchiveMerger.ja
+va:223)
+	at com.android.build.
+gradle.internal.tasks.
+DexMergingWorkAction.m
+erge(DexMergingTask.kt
+:914)
+	at com.android.build.
+gradle.internal.tasks.
+DexMergingWorkAction.r
+un(DexMergingTask.kt:8
+64)
+	at com.android.build.
+gradle.internal.profil
+e.ProfileAwareWorkActi
+on.execute(ProfileAwar
+eWorkAction.kt:74)
+	at org.gradle.workers
+.internal.DefaultWorke
+rServer.execute(Defaul
+tWorkerServer.java:63)
+	at org.gradle.workers
+.internal.NoIsolationW
+orkerFactory$1$1.creat
+e(NoIsolationWorkerFac
+tory.java:66)
+	at org.gradle.workers
+.internal.NoIsolationW
+orkerFactory$1$1.creat
+e(NoIsolationWorkerFac
+tory.java:62)
+	at org.gradle.interna
+l.classloader.ClassLoa
+derUtils.executeInClas
+sloader(ClassLoaderUti
+ls.java:100)
+	at org.gradle.workers
+.internal.NoIsolationW
+orkerFactory$1.lambda$
+execute$0(NoIsolationW
+orkerFactory.java:62)
+	at org.gradle.workers
+.internal.AbstractWork
+er$1.call(AbstractWork
+er.java:44)
+	at org.gradle.workers
+.internal.AbstractWork
+er$1.call(AbstractWork
+er.java:41)
+	at org.gradle.interna
+l.operations.DefaultBu
+ildOperationRunner$Cal
+lableBuildOperationWor
+ker.execute(DefaultBui
+ldOperationRunner.java
+:210)
+	at org.gradle.interna
+l.operations.DefaultBu
+ildOperationRunner$Cal
+lableBuildOperationWor
+ker.execute(DefaultBui
+ldOperationRunner.java
+:205)
+	at org.gradle.interna
+l.operations.DefaultBu
+ildOperationRunner$2.e
+xecute(DefaultBuildOpe
+rationRunner.java:67)
+	at org.gradle.interna
+l.operations.DefaultBu
+ildOperationRunner$2.e
+xecute(DefaultBuildOpe
+rationRunner.java:60)
+	at org.gradle.interna
+l.operations.DefaultBu
+ildOperationRunner.exe
+cute(DefaultBuildOpera
+tionRunner.java:167)
+	at org.gradle.interna
+l.operations.DefaultBu
+ildOperationRunner.exe
+cute(DefaultBuildOpera
+tionRunner.java:60)
+	at org.gradle.interna
+l.operations.DefaultBu
+ildOperationRunner.cal
+l(DefaultBuildOperatio
+nRunner.java:54)
+	at org.gradle.workers
+.internal.AbstractWork
+er.executeWrappedInBui
+ldOperation(AbstractWo
+rker.java:41)
+	at org.gradle.workers
+.internal.NoIsolationW
+orkerFactory$1.execute
+(NoIsolationWorkerFact
+ory.java:59)
+	at org.gradle.workers
+.internal.DefaultWorke
+rExecutor.lambda$submi
+tWork$0(DefaultWorkerE
+xecutor.java:174)
+	at java.base/java.uti
+l.concurrent.FutureTas
+k.run(FutureTask.java:
+264)
+	at org.gradle.interna
+l.work.DefaultConditio
+nalExecutionQueue$Exec
+utionRunner.runExecuti
+on(DefaultConditionalE
+xecutionQueue.java:194
+)
+	at org.gradle.interna
+l.work.DefaultConditio
+nalExecutionQueue$Exec
+utionRunner.access$700
+(DefaultConditionalExe
+cutionQueue.java:127)
+	at org.gradle.interna
+l.work.DefaultConditio
+nalExecutionQueue$Exec
+utionRunner$1.run(Defa
+ultConditionalExecutio
+nQueue.java:169)
+	at org.gradle.interna
+l.Factories$1.create(F
+actories.java:31)
+	at org.gradle.interna
+l.work.DefaultWorkerLe
+aseService.withLocks(D
+efaultWorkerLeaseServi
+ce.java:263)
+	at org.gradle.interna
+l.work.DefaultWorkerLe
+aseService.runAsWorker
+Thread(DefaultWorkerLe
+aseService.java:127)
+	at org.gradle.interna
+l.work.DefaultWorkerLe
+aseService.runAsWorker
+Thread(DefaultWorkerLe
+aseService.java:132)
+	at org.gradle.interna
+l.work.DefaultConditio
+nalExecutionQueue$Exec
+utionRunner.runBatch(D
+efaultConditionalExecu
+tionQueue.java:164)
+	at org.gradle.interna
+l.work.DefaultConditio
+nalExecutionQueue$Exec
+utionRunner.run(Defaul
+tConditionalExecutionQ
+ueue.java:133)
+	at java.base/java.uti
+l.concurrent.Executors
+$RunnableAdapter.call(
+Executors.java:539)
+	at java.base/java.uti
+l.concurrent.FutureTas
+k.run(FutureTask.java:
+264)
+	at org.gradle.interna
+l.concurrent.ExecutorP
+olicy$CatchAndRecordFa
+ilures.onExecute(Execu
+torPolicy.java:64)
+	at org.gradle.interna
+l.concurrent.AbstractM
+anagedExecutor$1.run(A
+bstractManagedExecutor
+.java:48)
+	at java.base/java.uti
+l.concurrent.ThreadPoo
+lExecutor.runWorker(Th
+readPoolExecutor.java:
+1136)
+	at java.base/java.uti
+l.concurrent.ThreadPoo
+lExecutor$Worker.run(T
+hreadPoolExecutor.java
+:635)
+	at java.base/java.lan
+g.Thread.run(Thread.ja
+va:840)
+Caused by: com.android
+.tools.r8.CompilationF
+ailedException: 
+Compilation failed to 
+complete, origin: C:\P
+rojects\middleman-upgr
+ade\middleman\node_mod
+ules\react-native-work
+lets\android\build\.tr
+ansforms\41542d8722573
+273c5572fb99d9edaeb\tr
+ansformed\bundleLibRun
+timeToDirDebug\bundleL
+ibRuntimeToDirDebug_de
+x\com\worklets\BuildCo
+nfig.dex
+	at Version.fakeStackE
+ntry(Version_8.8.34.ja
+va:0)
+	at com.android.tools.
+r8.T.a(R8_8.8.34_421f6
+3dea2f3c9bbf9a8d383360
+041ec06b79b9d288a7e85d
+7250ba9d1db770b:5)
+	at com.android.tools.
+r8.internal.Cu.a(R8_8.
+8.34_421f63dea2f3c9bbf
+9a8d383360041ec06b79b9
+d288a7e85d7250ba9d1db7
+70b:82)
+	at com.android.tools.
+r8.internal.Cu.a(R8_8.
+8.34_421f63dea2f3c9bbf
+9a8d383360041ec06b79b9
+d288a7e85d7250ba9d1db7
+70b:32)
+	at com.android.tools.
+r8.internal.Cu.a(R8_8.
+8.34_421f63dea2f3c9bbf
+9a8d383360041ec06b79b9
+d288a7e85d7250ba9d1db7
+70b:31)
+	at com.android.tools.
+r8.internal.Cu.b(R8_8.
+8.34_421f63dea2f3c9bbf
+9a8d383360041ec06b79b9
+d288a7e85d7250ba9d1db7
+70b:2)
+	at com.android.tools.
+r8.D8.run(R8_8.8.34_42
+1f63dea2f3c9bbf9a8d383
+360041ec06b79b9d288a7e
+85d7250ba9d1db770b:11)
+	at com.android.builde
+r.dexing.D8DexArchiveM
+erger.mergeDexArchives
+(D8DexArchiveMerger.ja
+va:221)
+	... 37 more
+Caused by: com.android
+.tools.r8.internal.g: 
+Type com.worklets.Buil
+dConfig is defined 
+multiple times: C:\Pro
+jects\middleman-upgrad
+e\middleman\node_modul
+es\react-native-workle
+ts\android\build\.tran
+sforms\41542d872257327
+3c5572fb99d9edaeb\tran
+sformed\bundleLibRunti
+meToDirDebug\bundleLib
+RuntimeToDirDebug_dex\
+com\worklets\BuildConf
+ig.dex, C:\Projects\mi
+ddleman-upgrade\middle
+man\node_modules\react
+-native-worklets-core\
+android\build\.transfo
+rms\2e0a59f9f0240ec33c
+7f8069e284fc2e\transfo
+rmed\bundleLibRuntimeT
+oDirDebug\bundleLibRun
+timeToDirDebug_dex\com
+\worklets\BuildConfig.
+dex
+	at com.android.tools.
+r8.internal.de0.a(R8_8
+.8.34_421f63dea2f3c9bb
+f9a8d383360041ec06b79b
+9d288a7e85d7250ba9d1db
+770b:21)
+	at com.android.tools.
+r8.internal.J60.a(R8_8
+.8.34_421f63dea2f3c9bb
+f9a8d383360041ec06b79b
+9d288a7e85d7250ba9d1db
+770b:54)
+	at com.android.tools.
+r8.internal.J60.a(R8_8
+.8.34_421f63dea2f3c9bb
+f9a8d383360041ec06b79b
+9d288a7e85d7250ba9d1db
+770b:10)
+	at java.base/java.uti
+l.concurrent.Concurren
+tHashMap.merge(Concurr
+entHashMap.java:2056)
+	at com.android.tools.
+r8.internal.J60.a(R8_8
+.8.34_421f63dea2f3c9bb
+f9a8d383360041ec06b79b
+9d288a7e85d7250ba9d1db
+770b:6)
+	at com.android.tools.
+r8.graph.s4$a.d(R8_8.8
+.34_421f63dea2f3c9bbf9
+a8d383360041ec06b79b9d
+288a7e85d7250ba9d1db77
+0b:6)
+	at com.android.tools.
+r8.dex.c.a(R8_8.8.34_4
+21f63dea2f3c9bbf9a8d38
+3360041ec06b79b9d288a7
+e85d7250ba9d1db770b:83
+)
+	at com.android.tools.
+r8.dex.c.a(R8_8.8.34_4
+21f63dea2f3c9bbf9a8d38
+3360041ec06b79b9d288a7
+e85d7250ba9d1db770b:44
+)
+	at com.android.tools.
+r8.dex.c.a(R8_8.8.34_4
+21f63dea2f3c9bbf9a8d38
+3360041ec06b79b9d288a7
+e85d7250ba9d1db770b:9)
+	at com.android.tools.
+r8.D8.a(R8_8.8.34_421f
+63dea2f3c9bbf9a8d38336
+0041ec06b79b9d288a7e85
+d7250ba9d1db770b:45)
+	at com.android.tools.
+r8.D8.d(R8_8.8.34_421f
+63dea2f3c9bbf9a8d38336
+0041ec06b79b9d288a7e85
+d7250ba9d1db770b:17)
+	at com.android.tools.
+r8.D8.b(R8_8.8.34_421f
+63dea2f3c9bbf9a8d38336
+0041ec06b79b9d288a7e85
+d7250ba9d1db770b:1)
+	at com.android.tools.
+r8.internal.Cu.a(R8_8.
+8.34_421f63dea2f3c9bbf
+9a8d383360041ec06b79b9
+d288a7e85d7250ba9d1db7
+70b:28)
+	... 40 more
+
+
+> Task :app:mergeDebugJavaResource
+
+> Task :react-native-worklets:buildCMakeDebug[arm64-v8a]
+C/C++: ninja: Entering directory `C:\Projects\middleman-upgrade\middleman\node_modules\react-native-worklets\android\.cxx\Debug\3l1iw555\arm64-v8a'
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/cpp/WKTJsiWorkletApi.cpp:1:
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/cpp/WKTJsiWorkletApi.h:14:
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/sharedvalues/WKTJsiSharedValue.h:8:
+C/C++: C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/WKTJsiDispatcher.h:97:22: warning: exception of type 'const std::runtime_error &' will be caught by earlier handler [-Wexceptions]
+C/C++:    97 |       } catch (const std::runtime_error &err) {
+C/C++:       |                      ^
+C/C++: C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/WKTJsiDispatcher.h:94:22: note: for type 'const std::exception &'
+C/C++:    94 |       } catch (const std::exception &err) {
+C/C++:       |                      ^
+C/C++: 1 warning generated.
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/cpp-adapter.cpp:6:
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/WKTJsiWorkletApi.h:14:
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/sharedvalues/WKTJsiSharedValue.h:8:
+C/C++: C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/WKTJsiDispatcher.h:97:22: warning: exception of type 'const std::runtime_error &' will be caught by earlier handler [-Wexceptions]
+C/C++:    97 |       } catch (const std::runtime_error &err) {
+C/C++:       |                      ^
+C/C++: C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/WKTJsiDispatcher.h:94:22: note: for type 'const std::exception &'
+C/C++:    94 |       } catch (const std::exception &err) {
+C/C++:       |                      ^
+C/C++: 1 warning generated.
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/cpp/WKTJsiWorkletContext.cpp:3:
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/cpp/WKTJsiWorkletApi.h:14:
+C/C++: In file included from C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/sharedvalues/WKTJsiSharedValue.h:8:
+C/C++: C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/WKTJsiDispatcher.h:97:22: warning: exception of type 'const std::runtime_error &' will be caught by earlier handler [-Wexceptions]
+C/C++:    97 |       } catch (const std::runtime_error &err) {
+C/C++:       |                      ^
+C/C++: C:/Projects/middleman-upgrade/middleman/node_modules/react-native-worklets/android/../cpp/WKTJsiDispatcher.h:94:22: note: for type 'const std::exception &'
+C/C++:    94 |       } catch (const std::exception &err) {
+C/C++:       |                      ^
+C/C++: 1 warning generated.
+
+[Incubating] Problems report is available at: file:///C:/Projects/middleman-upgrade/middleman/apps/native/android/build/reports/problems/problems-report.html
+
+FAILURE: Build failed 
+with an exception.
+
+* What went wrong:
+Execution failed for 
+task ':app:mergeLibDex
+Debug'.
+> A failure occurred 
+while executing com.an
+droid.build.gradle.int
+ernal.tasks.DexMerging
+TaskDelegate
+   > There was a 
+failure while 
+executing work items
+      > A failure 
+occurred while 
+executing com.android.
+build.gradle.internal.
+tasks.DexMergingWorkAc
+tion
+         > com.android
+.builder.dexing.DexArc
+hiveMergerException: 
+Error while merging 
+dex archives: 
+           Type com.wo
+rklets.BuildConfig is 
+defined multiple 
+times: C:\Projects\mid
+dleman-upgrade\middlem
+an\node_modules\react-
+native-worklets\androi
+d\build\.transforms\41
+542d8722573273c5572fb9
+9d9edaeb\transformed\b
+undleLibRuntimeToDirDe
+bug\bundleLibRuntimeTo
+DirDebug_dex\com\workl
+ets\BuildConfig.dex, C
+:\Projects\middleman-u
+pgrade\middleman\node_
+modules\react-native-w
+orklets-core\android\b
+uild\.transforms\2e0a5
+9f9f0240ec33c7f8069e28
+4fc2e\transformed\bund
+leLibRuntimeToDirDebug
+\bundleLibRuntimeToDir
+Debug_dex\com\worklets
+\BuildConfig.dex
+           Learn how 
+to resolve the issue 
+at https://developer.a
+ndroid.com/studio/buil
+d/dependencies#duplica
+te_classes.
+
+* Try:
+> Run with 
+--stacktrace option 
+to get the stack 
+trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at htt
+ps://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2m 56s
+262 actionable tasks: 160 executed, 53 from cache, 49 up-to-date
+Error: C:\Projects\mid
+dleman-upgrade\middlem
+an\apps\native\android
+\gradlew.bat 
+app:assembleDebug -x 
+lint -x test 
+--configure-on-demand 
+--build-cache -PreactN
+ativeDevServerPort=808
+1 -PreactNativeArchite
+ctures=x86_64,arm64-v8
+a exited with 
+non-zero code: 1
+Error: C:\Projects\mid
+dleman-upgrade\middlem
+an\apps\native\android
+\gradlew.bat 
+app:assembleDebug -x 
+lint -x test 
+--configure-on-demand 
+--build-cache -PreactN
+ativeDevServerPort=808
+1 -PreactNativeArchite
+ctures=x86_64,arm64-v8
+a exited with 
+non-zero code: 1
+    at ChildProcess.co
+mpletionListener (C:\P
+rojects\middleman-upgr
+ade\middleman\node_mod
+ules\@expo\spawn-async
+\src\spawnAsync.ts:67:
+13)
+    at 
+Object.onceWrapper 
+(node:events:634:26)
+    at 
+ChildProcess.emit 
+(node:events:519:28)
+    at 
+ChildProcess.cp.emit (
+C:\Projects\middleman-
+upgrade\middleman\node
+_modules\cross-spawn\l
+ib\enoent.js:34:29)
+    at maybeClose (nod
+e:internal/child_proce
+ss:1101:16)
+    at Process.ChildPr
+ocess._handle.onexit (
+node:internal/child_pr
+ocess:304:5)
+    ...
+    at spawnAsync (C:\
+Projects\middleman-upg
+rade\middleman\node_mo
+dules\@expo\spawn-asyn
+c\src\spawnAsync.ts:28
+:21)
+    at 
+spawnGradleAsync (C:\P
+rojects\middleman-upgr
+ade\middleman\node_mod
+ules\@expo\cli\src\sta
+rt\platforms\android\g
+radle.ts:134:28)
+    at assembleAsync (
+C:\Projects\middleman-
+upgrade\middleman\node
+_modules\@expo\cli\src
+\start\platforms\andro
+id\gradle.ts:83:16)
+    at 
+runAndroidAsync (C:\Pr
+ojects\middleman-upgra
+de\middleman\node_modu
+les\@expo\cli\src\run\
+android\runAndroidAsyn
+c.ts:62:24)

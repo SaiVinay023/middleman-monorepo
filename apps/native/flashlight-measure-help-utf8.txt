@@ -1,0 +1,10 @@
+﻿Usage: flashlight measure [options]
+
+Measure performance of an Android app. Display the results live in a web app.
+
+Main usage:
+flashlight measure
+
+Options:
+  -p, --port [port]  Specify the port number for the server
+  -h, --help         display help for command

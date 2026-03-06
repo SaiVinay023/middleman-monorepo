@@ -1,0 +1,215 @@
+﻿env: load .env.local
+env: export NEXT_PUBLIC_SUPABASE_URL EXPO_PUBLIC_SUPABASE_URL NEXT_PUBLIC_SUPABASE_ANON_KEY EXPO_PUBLIC_SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME CLOUDINARY_API_KEY CLOUDINARY_API_SECRET UPSTASH_REDIS_REST_URL UPSTASH_REDIS_REST_TOKEN
+ΓÇ║ Building app...
+Starting Metro Bundler
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+Android node_modules\expo-router\entry.js ΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæΓûæ  0.0% (0/1)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæΓûæΓûæΓûæΓûæ 70.6% ( 72/129)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæΓûæΓûæΓûæΓûæ 70.6% (340/589)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæΓûæΓûæΓûæΓûæ 70.6% (671/914)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæΓûæ 89.0% ( 991/1090)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæΓûæ 91.4% (1201/1256)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæ 99.8% (1297/1298)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæ 99.9% (1298/1298)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæ 99.9% (2069/2988)
+Android node_modules\expo-router\entry.js ΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûôΓûæ 99.9% (3101/3101)
+Android Bundled 58081ms node_modules\expo-router\entry.js (3101 modules)
+Writing bundle output to: C:\Users\Vinay\AppData\Local\Temp\59asi9pl0z6\index.js
+Copying 26 asset files
+Done writing bundle output
+Configuration on demand is an incubating feature.
+> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:processResources NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:classes UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin-shared:jar UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:shared:compileJava NO-SOURCE
+> Task :gradle-plugin:shared:processResources NO-SOURCE
+> Task :gradle-plugin:shared:classes UP-TO-DATE
+> Task :gradle-plugin:shared:jar UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:classes UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:processResources UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:classes UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-settings-plugin:jar UP-TO-DATE
+> Task :gradle-plugin:settings-plugin:jar UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :expo-gradle-plugin:expo-autolinking-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :expo-module-gradle-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :expo-module-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-module-gradle-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileKotlin UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:pluginDescriptors UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:processResources UP-TO-DATE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:classes UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE
+> Task :expo-gradle-plugin:expo-autolinking-plugin:jar UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:processResources UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:classes UP-TO-DATE
+> Task :gradle-plugin:react-native-gradle-plugin:jar UP-TO-DATE
+> Task :expo-module-gradle-plugin:compileKotlin UP-TO-DATE
+> Task :expo-module-gradle-plugin:compileJava NO-SOURCE
+> Task :expo-module-gradle-plugin:classes UP-TO-DATE
+> Task :expo-module-gradle-plugin:jar UP-TO-DATE
+
+> Configure project :
+[32m[ExpoRootProject][0m Using the following versions:
+  - buildTools:  [32m35.0.0[0m
+  - minSdk:      [32m24[0m
+  - compileSdk:  [32m35[0m
+  - targetSdk:   [32m35[0m
+  - ndk:         [32m27.1.12297006[0m
+  - kotlin:      [32m2.0.21[0m
+  - ksp:         [32m2.0.21-1.0.28[0m
+
+[Incubating] Problems report is available at: file:///C:/Projects/middleman-upgrade/middleman/apps/native/android/build/reports/problems/problems-report.html
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:
+\Users\Vinay\AppData\Roami
+ng\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (:  
+  String) [], RemoteExc   
+ eption
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+FAILURE: Build failed 
+with an exception.
+
+* Where:
+Build file 'C:\Projects\mi
+ddleman-upgrade\middleman\
+apps\native\android\build.
+gradle' line: 37
+
+* What went wrong:
+A problem occurred 
+evaluating root project 
+'Middleman'.
+> Failed to apply plugin '
+com.facebook.react.rootpro
+ject'.
+   > A problem occurred 
+configuring project 
+':app'.
+      > SDK location not 
+found. Define a valid SDK 
+location with an 
+ANDROID_HOME environment 
+variable or by setting 
+the sdk.dir path in your 
+project's local 
+properties file at 'C:\Pro
+jects\middleman-upgrade\mi
+ddleman\apps\native\androi
+d\local.properties'.
+
+* Try:
+> Run with --stacktrace 
+option to get the stack 
+trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to get 
+full insights.
+> Get more help at 
+https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 5s
+28 actionable tasks: 4 executed, 24 up-to-date
+Error: C:\Projects\middlem
+an-upgrade\middleman\apps\
+native\android\gradlew.bat
+ app:assembleRelease -x 
+lint -x test 
+--configure-on-demand 
+--build-cache -PreactNativ
+eDevServerPort=8081 
+exited with non-zero 
+code: 1
+Error: C:\Projects\middlem
+an-upgrade\middleman\apps\
+native\android\gradlew.bat
+ app:assembleRelease -x 
+lint -x test 
+--configure-on-demand 
+--build-cache -PreactNativ
+eDevServerPort=8081 
+exited with non-zero 
+code: 1
+    at ChildProcess.comple
+tionListener (C:\Projects\
+middleman-upgrade\middlema
+n\node_modules\@expo\spawn
+-async\src\spawnAsync.ts:6
+7:13)
+    at Object.onceWrapper 
+(node:events:634:26)
+    at ChildProcess.emit 
+(node:events:519:28)
+    at 
+ChildProcess.cp.emit (C:\P
+rojects\middleman-upgrade\
+middleman\node_modules\cro
+ss-spawn\lib\enoent.js:34:
+29)
+    at maybeClose (node:in
+ternal/child_process:1101:
+16)
+    at Process.ChildProces
+s._handle.onexit (node:int
+ernal/child_process:304:5)
+    ...
+    at spawnAsync (C:\Proj
+ects\middleman-upgrade\mid
+dleman\node_modules\@expo\
+spawn-async\src\spawnAsync
+.ts:28:21)
+    at spawnGradleAsync (C
+:\Projects\middleman-upgra
+de\middleman\node_modules\
+@expo\cli\src\start\platfo
+rms\android\gradle.ts:134:
+28)
+    at assembleAsync (C:\P
+rojects\middleman-upgrade\
+middleman\node_modules\@ex
+po\cli\src\start\platforms
+\android\gradle.ts:83:16)
+    at runAndroidAsync (C:
+\Projects\middleman-upgrad
+e\middleman\node_modules\@
+expo\cli\src\run\android\r
+unAndroidAsync.ts:62:24)
+    at 
+processTicksAndRejections 
+(node:internal/process/tas
+k_queues:105:5)

@@ -1,0 +1,37 @@
+{
+  "name": "middleman-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "perf:web": "pnpm --filter @repo/web perf:audit",
+    "perf:web:quick": "pnpm --filter @repo/web perf:audit:quick",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@vitejs/plugin-react": "^5.1.4",
+    "jsdom": "^28.1.0",
+    "prettier": "^3.5.2",
+    "turbo": "^2.4.1",
+    "typescript": "^5.6.0",
+    "vitest": "^4.0.18"
+  },
+  "packageManager": "pnpm@10.6.1",
+  "pnpm": {
+    "overrides": {
+      "react": "19.0.0",
+      "react-dom": "19.0.0",
+      "react-native": "0.79.6",
+      "react-native-safe-area-context": "5.4.0"
+    }
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
+}
