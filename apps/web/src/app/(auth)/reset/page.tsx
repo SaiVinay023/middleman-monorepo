@@ -40,24 +40,49 @@ export default function ResetPasswordPage() {
       <h1 className="text-2xl font-bold mb-2">Create New Password</h1>
       <p className="text-gray-500 mb-6 text-sm">Enter the 6-digit code from your email.</p>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <div>
-          <input 
-            {...register('code')} 
-            placeholder="6-Digit Code" 
+          <label htmlFor="reset-code" className="block text-sm font-medium text-gray-700 mb-1.5">
+            6-digit code
+          </label>
+          <input
+            {...register('code')}
+            id="reset-code"
+            type="text"
+            autoComplete="one-time-code"
+            inputMode="numeric"
+            maxLength={6}
+            placeholder="000000"
             className="w-full p-4 border rounded-xl text-center text-xl tracking-widest"
+            aria-describedby={errors.code ? 'reset-code-error' : undefined}
+            aria-invalid={!!errors.code}
           />
-          {errors.code && <p className="text-red-500 text-xs mt-1">{errors.code.message as string}</p>}
+          {errors.code && (
+            <p id="reset-code-error" role="alert" className="text-red-500 text-xs mt-1">
+              {errors.code.message as string}
+            </p>
+          )}
         </div>
 
         <div>
-          <input 
-            {...register('newPassword')} 
-            type="password" 
-            placeholder="New Password" 
+          <label htmlFor="reset-newPassword" className="block text-sm font-medium text-gray-700 mb-1.5">
+            New password
+          </label>
+          <input
+            {...register('newPassword')}
+            id="reset-newPassword"
+            type="password"
+            autoComplete="new-password"
+            placeholder="••••••••"
             className="w-full p-4 border rounded-xl"
+            aria-describedby={errors.newPassword ? 'reset-newPassword-error' : undefined}
+            aria-invalid={!!errors.newPassword}
           />
-          {errors.newPassword && <p className="text-red-500 text-xs mt-1">{errors.newPassword.message as string}</p>}
+          {errors.newPassword && (
+            <p id="reset-newPassword-error" role="alert" className="text-red-500 text-xs mt-1">
+              {errors.newPassword.message as string}
+            </p>
+          )}
         </div>
 
         {error && <p className="text-red-600 text-sm">{error}</p>}

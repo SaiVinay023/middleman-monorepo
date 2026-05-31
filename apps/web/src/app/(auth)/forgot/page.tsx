@@ -36,15 +36,29 @@ export default function ForgotPasswordPage() {
         </p>
 
         {!emailSent ? (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div className="relative">
-              <Mail className="absolute left-4 top-4 text-gray-400" size={20} />
-              <input 
-                {...register('email')} 
-                placeholder="Email Address" 
-                className="w-full pl-12 p-4 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all" 
-              />
-              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message as string}</p>}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+            <div>
+              <label htmlFor="forgot-email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                Email address
+              </label>
+              <div className="relative">
+                <Mail className="absolute left-4 top-4 text-gray-400" size={20} aria-hidden="true" />
+                <input
+                  {...register('email')}
+                  id="forgot-email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="you@example.com"
+                  className="w-full pl-12 p-4 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                  aria-describedby={errors.email ? 'forgot-email-error' : undefined}
+                  aria-invalid={!!errors.email}
+                />
+              </div>
+              {errors.email && (
+                <p id="forgot-email-error" role="alert" className="text-red-500 text-xs mt-1">
+                  {errors.email.message as string}
+                </p>
+              )}
             </div>
 
             {error && <p className="text-red-600 text-sm font-medium bg-red-50 p-3 rounded-lg">{error}</p>}

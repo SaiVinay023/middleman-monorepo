@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow authenticated/private routes
+Disallow: /freelancer/
+Disallow: /company/
+Disallow: /admin/
+
+Sitemap: https://middlemanapp.com/sitemap.xml
