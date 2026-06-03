@@ -1,9 +1,10 @@
 import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useAuth } from '../contexts/AuthContext';
 import { Link } from 'expo-router';
+import { FormInput } from '../components/FormInput';
 
 const loginSchema = z.object({
     email: z.string().email('Invalid email address').toLowerCase(),
@@ -20,7 +21,7 @@ export default function LoginScreen() {
         defaultValues: { email: '', password: '' },
     });
 
-    const onSubmit = async (data: LoginFormData) => {
+    const handleLoginSubmit = async (data: LoginFormData) => {
         try {
             await signIn(data.email, data.password);
             // No manual redirect needed — RootNavigation in _layout.tsx
@@ -37,49 +38,25 @@ export default function LoginScreen() {
                 <Text className="text-gray-500 mb-4">Sign in to your Middleman account</Text>
 
                 <View className="gap-y-3">
-                    <Controller
+                    <FormInput
                         control={control}
                         name="email"
-                        render={({ field: { onChange, onBlur, value } }) => (
-                            <View>
-                                <Text className="text-sm font-semibold text-gray-700 mb-1">Email</Text>
-                                <TextInput
-                                    className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base"
-                                    placeholder="you@example.com"
-                                    onBlur={onBlur}
-                                    onChangeText={onChange}
-                                    value={value}
-                                    autoCapitalize="none"
-                                    keyboardType="email-address"
-                                    autoComplete="email"
-                                />
-                                {errors.email && (
-                                    <Text className="text-red-500 text-xs mt-1">{errors.email.message}</Text>
-                                )}
-                            </View>
-                        )}
+                        label="Email"
+                        placeholder="you@example.com"
+                        autoCapitalize="none"
+                        keyboardType="email-address"
+                        autoComplete="email"
+                        error={errors.email?.message}
                     />
 
-                    <Controller
+                    <FormInput
                         control={control}
                         name="password"
-                        render={({ field: { onChange, onBlur, value } }) => (
-                            <View>
-                                <Text className="text-sm font-semibold text-gray-700 mb-1">Password</Text>
-                                <TextInput
-                                    className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base"
-                                    placeholder="••••••••"
-                                    secureTextEntry
-                                    onBlur={onBlur}
-                                    onChangeText={onChange}
-                                    value={value}
-                                    autoComplete="current-password"
-                                />
-                                {errors.password && (
-                                    <Text className="text-red-500 text-xs mt-1">{errors.password.message}</Text>
-                                )}
-                            </View>
-                        )}
+                        label="Password"
+                        placeholder="••••••••"
+                        secureTextEntry
+                        autoComplete="current-password"
+                        error={errors.password?.message}
                     />
 
                     {error && (
@@ -90,7 +67,7 @@ export default function LoginScreen() {
 
                     <TouchableOpacity
                         disabled={loading}
-                        onPress={handleSubmit(onSubmit)}
+                        onPress={handleSubmit(handleLoginSubmit)}
                         className="w-full bg-blue-600 p-4 rounded-2xl items-center mt-2 flex-row justify-center gap-x-2"
                         style={{ opacity: loading ? 0.7 : 1 }}
                     >

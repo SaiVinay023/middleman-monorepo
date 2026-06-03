@@ -1,0 +1,3945 @@
+{
+  "repository": "SaiVinay023/middleman-monorepo",
+  "analyzedAt": "2026-06-03T21:39:10.766Z",
+  "codeflowVersion": "1.0",
+  "summary": {
+    "healthScore": 95,
+    "healthGrade": "A",
+    "totalFiles": 70,
+    "totalFunctions": 78,
+    "totalConnections": 33,
+    "linesOfCode": 12941,
+    "unusedFunctions": 0,
+    "securityIssues": 1,
+    "patterns": 4,
+    "duplicates": 4,
+    "layerViolations": 2,
+    "highSecurityIssues": 0
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "name": ".gitignore",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 90,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": ".prettierrc",
+      "name": ".prettierrc",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 8,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": ".vscode/settings.json",
+      "name": "settings.json",
+      "folder": ".vscode",
+      "layer": "config",
+      "lines": 3,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "folder": "root",
+      "layer": "note",
+      "lines": 134,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/.gitignore",
+      "name": ".gitignore",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 6,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/app.json",
+      "name": "app.json",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 39,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/app/(dashboard)/_layout.tsx",
+      "name": "_layout.tsx",
+      "folder": "apps/native/app/(dashboard)",
+      "layer": "utils",
+      "lines": 8,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "DashboardLayout",
+          "line": 3,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function DashboardLayout() {\n    return (\n        <Stack screenOptions={{ headerShown: false }} />\n    );\n}"
+        }
+      ],
+      "functionCount": 1
+    },
+    {
+      "path": "apps/native/app/(dashboard)/admin/index.tsx",
+      "name": "index.tsx",
+      "folder": "apps/native/app/(dashboard)/admin",
+      "layer": "utils",
+      "lines": 174,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "StatCard",
+          "line": 8,
+          "internalCalls": 3,
+          "externalCalls": 0,
+          "totalCalls": 3,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "function StatCard({ label, count, color, icon: Icon, onPress }: any) {\n    const colorMap: Record<string, { bg: string; iconBg: string; iconColor: string }> = {\n        blue: { bg: '#eff6ff', iconBg: '#3b82f6', iconColor: '#fff' },\n        emerald: { bg: '#ecfdf5', iconBg: '#10b981', iconColor: '#fff' },\n        purple: { bg: '#f5f3ff', iconBg: '#8b5cf6', iconColor: '#fff' },\n    };\n    const colors = colorMap[color] || colorMap.blue;\n\n    return (\n        <TouchableOpacity\n            onPress={onPress}\n            className=\"flex-1 rounded-[2rem] p-5 items-center border\"\n            style={{ backgroundColor: colors.bg, borderColor: colors.bg }}\n        >\n            <View className=\"w-14 h-14 rounded-2xl items-center justify-center mb-3\" style={{ backgroundColor: colors.iconBg }}>\n  // ..."
+        },
+        {
+          "name": "AdminDashboard",
+          "line": 31,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function AdminDashboard() {\n    const router = useRouter();\n    const { user, signOut } = useAuth();\n    const [stats, setStats] = useState({ pendingGigs: 0, pendingReview: 0, pendingDocs: 0 });\n    const [loading, setLoading] = useState(true);\n    const [refreshing, setRefreshing] = useState(false);\n\n    const fetchStats = async () => {\n        try {\n            const [gigsRes, reviewRes, docsRes] = await Promise.all([\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'available'),\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'pending_review'),\n                supabase.from('documents').select('id', { count: 'exact' }).eq('status', 'pending'),\n            ]);\n            setStats({\n  // ..."
+        },
+        {
+          "name": "fetchStats",
+          "line": 38,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [],
+          "code": "    const fetchStats = async () => {\n        try {\n            const [gigsRes, reviewRes, docsRes] = await Promise.all([\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'available'),\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'pending_review'),\n                supabase.from('documents').select('id', { count: 'exact' }).eq('status', 'pending'),\n            ]);\n            setStats({\n                pendingGigs: gigsRes.count || 0,\n                pendingReview: reviewRes.count || 0,\n                pendingDocs: docsRes.count || 0,\n            });\n        } catch (err) {\n            console.error(err);\n        } finally {\n  // ..."
+        },
+        {
+          "name": "onRefresh",
+          "line": 59,
+          "internalCalls": 1,
+          "externalCalls": 2,
+          "totalCalls": 3,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+              "name": "gigs.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "name": "my-work.tsx",
+              "count": 1
+            }
+          ],
+          "code": "    const onRefresh = async () => {\n        setRefreshing(true);\n        await fetchStats();\n        setRefreshing(false);\n    };"
+        },
+        {
+          "name": "onPress",
+          "line": 99,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                onPress={() => { }}"
+        },
+        {
+          "name": "onPress",
+          "line": 106,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                onPress={() => { }}"
+        },
+        {
+          "name": "onPress",
+          "line": 114,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                            onPress={() => { }}"
+        }
+      ],
+      "functionCount": 7
+    },
+    {
+      "path": "apps/native/app/(dashboard)/company/index.tsx",
+      "name": "index.tsx",
+      "folder": "apps/native/app/(dashboard)/company",
+      "layer": "utils",
+      "lines": 258,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "onPress",
+          "line": 81,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        onPress={() => onToggleMap(gig.id)}"
+        },
+        {
+          "name": "onPress",
+          "line": 103,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                    onPress={() => onPayForGig(gig.id)}"
+        },
+        {
+          "name": "CompanyDashboard",
+          "line": 123,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function CompanyDashboard() {\n    const { user, signOut } = useAuth();\n    const { companyGigs, isLoading, createGig, payForGig, isPaying } = useCompanyGigs(user?.id || '');\n    const [isCreateModalVisible, setCreateModalVisible] = useState(false);\n    const [expandedMapGigId, setExpandedMapGigId] = useState<string | null>(null);\n\n    const handleCreateGig = useCallback(\n        async (data: any) => {\n            await createGig({ ...data, company_id: user?.id as string });\n            setCreateModalVisible(false);\n        },\n        [createGig, user?.id]\n    );\n\n    const handleToggleMap = useCallback((gigId: string) => {\n  // ..."
+        },
+        {
+          "name": "onPress",
+          "line": 222,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                    onPress={() => setCreateModalVisible(true)}"
+        },
+        {
+          "name": "keyExtractor",
+          "line": 243,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        keyExtractor={(item) => item.key}"
+        },
+        {
+          "name": "onClose",
+          "line": 251,
+          "internalCalls": 0,
+          "externalCalls": 4,
+          "totalCalls": 4,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "CreateGigScreen.tsx",
+              "count": 4
+            }
+          ],
+          "code": "                onClose={() => setCreateModalVisible(false)}"
+        }
+      ],
+      "functionCount": 6
+    },
+    {
+      "path": "apps/native/app/(dashboard)/freelancer/_layout.tsx",
+      "name": "_layout.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "layer": "utils",
+      "lines": 73,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "TabIcon",
+          "line": 5,
+          "internalCalls": 4,
+          "externalCalls": 0,
+          "totalCalls": 4,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "function TabIcon({ icon: Icon, focused, label }: { icon: any; focused: boolean; label: string }) {\n    return (\n        <View className=\"items-center justify-center pt-1\">\n            <Icon\n                size={22}\n                color={focused ? '#2563eb' : '#9ca3af'}\n                strokeWidth={focused ? 2.5 : 1.8}\n            />\n            <Text\n                className={`text-[10px] mt-0.5 font-${focused ? 'bold' : 'normal'}`}\n                style={{ color: focused ? '#2563eb' : '#9ca3af' }}\n            >\n                {label}\n            </Text>\n        </View>\n  // ..."
+        },
+        {
+          "name": "FreelancerLayout",
+          "line": 23,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function FreelancerLayout() {\n    return (\n        <Tabs\n            screenOptions={{\n                headerShown: false,\n                lazy: true,\n                freezeOnBlur: true,\n                tabBarStyle: {\n                    position: 'absolute',\n                    bottom: 0,\n                    left: 0,\n                    right: 0,\n                    height: 72,\n                    backgroundColor: '#fff',\n                    borderTopColor: '#f3f4f6',\n  // ..."
+        },
+        {
+          "name": "tabBarIcon",
+          "line": 49,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                    tabBarIcon: ({ focused }) => <TabIcon icon={Home} focused={focused} label=\"Home\" />,"
+        },
+        {
+          "name": "tabBarIcon",
+          "line": 55,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                    tabBarIcon: ({ focused }) => <TabIcon icon={Briefcase} focused={focused} label=\"Gigs\" />,"
+        },
+        {
+          "name": "tabBarIcon",
+          "line": 61,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                    tabBarIcon: ({ focused }) => <TabIcon icon={CheckSquare} focused={focused} label=\"My Work\" />,"
+        },
+        {
+          "name": "tabBarIcon",
+          "line": 67,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                    tabBarIcon: ({ focused }) => <TabIcon icon={User} focused={focused} label=\"Profile\" />,"
+        }
+      ],
+      "functionCount": 6
+    },
+    {
+      "path": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+      "name": "gigs.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "layer": "utils",
+      "lines": 162,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "onPress",
+          "line": 71,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                onPress={() => onAccept(gig.id)}"
+        },
+        {
+          "name": "GigsScreen",
+          "line": 89,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function GigsScreen() {\n    const { user } = useAuth();\n    const { availableGigs, isLoadingAvailable, claimGig, isClaiming, refresh } = useGigs(user?.id, {\n        loadAvailable: true,\n        loadMine: false,\n    });\n    const [refreshing, setRefreshing] = useState(false);\n\n    const onRefresh = useCallback(async () => {\n        setRefreshing(true);\n        try {\n            await refresh();\n        } finally {\n            setRefreshing(false);\n        }\n  // ..."
+        },
+        {
+          "name": "keyExtractor",
+          "line": 138,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "            keyExtractor={(item) => item.id}"
+        }
+      ],
+      "functionCount": 3
+    },
+    {
+      "path": "apps/native/app/(dashboard)/freelancer/index.tsx",
+      "name": "index.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "layer": "utils",
+      "lines": 157,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "FreelancerHome",
+          "line": 7,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function FreelancerHome() {\n    const router = useRouter();\n    const { user, profile, signOut } = useAuth();\n    const { availableGigs, myGigs, totalEarnings } = useGigs(user?.id);\n\n    const weeklyGoal = 1000;\n    const progress = Math.min((totalEarnings / weeklyGoal) * 100, 100);\n    const progressDisplay = Number.isFinite(progress) ? Math.round(progress) : 0;\n\n    const recentGigs = [...myGigs].slice(0, 3);\n\n    const statusColor: Record<string, string> = {\n        assigned: 'bg-blue-100 text-blue-700',\n        in_progress: 'bg-amber-100 text-amber-700',\n        pending_review: 'bg-purple-100 text-purple-700',\n  // ..."
+        },
+        {
+          "name": "onPress",
+          "line": 77,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                            onPress={() => router.push('/(dashboard)/freelancer/gigs')}"
+        },
+        {
+          "name": "onPress",
+          "line": 90,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                            onPress={() => router.push('/(dashboard)/freelancer/my-work')}"
+        },
+        {
+          "name": "onPress",
+          "line": 146,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                            onPress={() => router.push('/(dashboard)/freelancer/profile')}"
+        }
+      ],
+      "functionCount": 4
+    },
+    {
+      "path": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+      "name": "my-work.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "layer": "utils",
+      "lines": 302,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "onPress",
+          "line": 97,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        onPress={() => Linking.openURL(`tel:${gig.client_phone || ''}`)}"
+        },
+        {
+          "name": "onPress",
+          "line": 104,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        onPress={() => Linking.openURL(`sms:${gig.client_phone || ''}`)}"
+        },
+        {
+          "name": "onPress",
+          "line": 114,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        onPress={() => onFinishWork(gig.id)}"
+        },
+        {
+          "name": "onPress",
+          "line": 140,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        onPress={() => onStartWork(gig.id)}"
+        },
+        {
+          "name": "MyWorkScreen",
+          "line": 160,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function MyWorkScreen() {\n    const router = useRouter();\n    const { user } = useAuth();\n    const { myGigs, isLoadingMine, updateGigStatus, isUpdatingStatus, completeGig, isCompleting, refresh } = useGigs(\n        user?.id,\n        {\n            loadAvailable: false,\n            loadMine: true,\n        }\n    );\n    const [refreshing, setRefreshing] = useState(false);\n\n    const onRefresh = useCallback(async () => {\n        setRefreshing(true);\n        try {\n  // ..."
+        },
+        {
+          "name": "keyExtractor",
+          "line": 266,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "            keyExtractor={(item) => item.id}"
+        },
+        {
+          "name": "onPress",
+          "line": 292,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        onPress={() => router.push('/(dashboard)/freelancer/gigs')}"
+        }
+      ],
+      "functionCount": 7
+    },
+    {
+      "path": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+      "name": "profile.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "layer": "utils",
+      "lines": 205,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "DocCard",
+          "line": 17,
+          "internalCalls": 1,
+          "externalCalls": 0,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "function DocCard({ userId, docType, label, icon }: { userId: string; docType: DocType; label: string; icon: string }) {\n    const [status, setStatus] = useState<'idle' | 'uploaded' | 'uploading'>('idle');\n    const [uploading, setUploading] = useState(false);\n\n    useEffect(() => {\n        supabase\n            .from('documents')\n            .select('id')\n            .eq('user_id', userId)\n            .eq('doc_type', docType)\n            .single()\n            .then(({ data }) => {\n                if (data) setStatus('uploaded');\n            });\n    }, [userId, docType]);\n  // ..."
+        },
+        {
+          "name": "handleUpload",
+          "line": 33,
+          "internalCalls": 1,
+          "externalCalls": 0,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [],
+          "code": "    const handleUpload = async () => {\n        try {\n            const result = await DocumentPicker.getDocumentAsync({\n                type: ['application/pdf', 'image/*'],\n                copyToCacheDirectory: true,\n            });\n            if (result.canceled || !result.assets?.[0]) return;\n\n            setUploading(true);\n            const file = result.assets[0];\n\n            const cloudName = process.env.EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME;\n            if (cloudName) {\n                const formData = new FormData();\n                formData.append('file', { uri: file.uri, type: file.mimeType || 'application/pdf', name: file.name } as any);\n  // ..."
+        },
+        {
+          "name": "ProfileScreen",
+          "line": 120,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function ProfileScreen() {\n    const { user, profile, signOut } = useAuth();\n    const [docCount, setDocCount] = useState(0);\n\n    useEffect(() => {\n        if (!user?.id) return;\n        supabase\n            .from('documents')\n            .select('id', { count: 'exact' })\n            .eq('user_id', user.id)\n            .then(({ count }) => setDocCount(count || 0));\n    }, [user?.id]);\n\n    const totalDocs = DOC_TYPES.length;\n    const progressPercent = Math.round((docCount / totalDocs) * 100);\n  // ..."
+        }
+      ],
+      "functionCount": 3
+    },
+    {
+      "path": "apps/native/app/_layout.tsx",
+      "name": "_layout.tsx",
+      "folder": "apps/native/app",
+      "layer": "utils",
+      "lines": 51,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "RootNavigation",
+          "line": 9,
+          "internalCalls": 1,
+          "externalCalls": 0,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "function RootNavigation() {\n    const { user, profile, isLoading } = useAuth();\n    const router = useRouter();\n    const segments = useSegments();\n\n    useEffect(() => {\n        if (isLoading) return;\n\n        const inDashboard = segments[0] === '(dashboard)';\n        const inAuth = segments[0] === 'login' || segments[0] === 'signup';\n\n        if (user && profile) {\n            // User is logged in — redirect to their dashboard if they're on landing/auth screens\n            if (!inDashboard) {\n                if (profile.role === 'admin') router.replace('/(dashboard)/admin');\n  // ..."
+        },
+        {
+          "name": "RootLayout",
+          "line": 38,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function RootLayout() {\n    return (\n        <SafeAreaProvider>\n            <Head>\n                <title>Middleman App | Native Portal</title>\n                <meta name=\"description\" content=\"Middleman cross-platform technician network.\" />\n            </Head>\n            <AuthProvider>\n                <RootNavigation />\n            </AuthProvider>\n        </SafeAreaProvider>\n    );\n}"
+        }
+      ],
+      "functionCount": 2
+    },
+    {
+      "path": "apps/native/app/index.tsx",
+      "name": "index.tsx",
+      "folder": "apps/native/app",
+      "layer": "utils",
+      "lines": 39,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "Home",
+          "line": 7,
+          "internalCalls": 0,
+          "externalCalls": 1,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/_layout.tsx",
+              "name": "_layout.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export default function Home() {\n    return (\n        <View className=\"flex-1 items-center justify-center p-6 bg-white\">\n            <View className=\"items-center max-w-md w-full gap-y-6\">\n                <Text className=\"text-5xl font-extrabold text-gray-900 tracking-tight text-center\">\n                    Middleman\n                </Text>\n                <Text className=\"text-xl text-gray-600 text-center\">\n                    The premium ecosystem for technicians and companies.\n                </Text>\n\n                <View className=\"flex flex-col gap-4 w-full pt-4\">\n                    <Link href=\"/login\" asChild>\n                        <TouchableOpacity className=\"w-full px-6 py-4 bg-blue-600 rounded-2xl items-center\">\n                            <Text className=\"text-white font-bold text-lg\">Sign In</Text>\n  // ..."
+        }
+      ],
+      "functionCount": 1
+    },
+    {
+      "path": "apps/native/app/login.tsx",
+      "name": "login.tsx",
+      "folder": "apps/native/app",
+      "layer": "utils",
+      "lines": 112,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "LoginScreen",
+          "line": 15,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function LoginScreen() {\n    const { loading, error, signIn } = useAuth();\n\n    const { control, handleSubmit, formState: { errors } } = useForm<LoginFormData>({\n        resolver: zodResolver(loginSchema),\n        defaultValues: { email: '', password: '' },\n    });\n\n    const onSubmit = async (data: LoginFormData) => {\n        try {\n            await signIn(data.email, data.password);\n            // No manual redirect needed — RootNavigation in _layout.tsx\n            // listens to onAuthStateChange and redirects automatically\n        } catch {\n            // Error shown via the `error` state from useAuth\n  // ..."
+        },
+        {
+          "name": "onSubmit",
+          "line": 23,
+          "internalCalls": 1,
+          "externalCalls": 3,
+          "totalCalls": 4,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "signup.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "CreateGigScreen.tsx",
+              "count": 2
+            }
+          ],
+          "code": "    const onSubmit = async (data: LoginFormData) => {\n        try {\n            await signIn(data.email, data.password);\n            // No manual redirect needed — RootNavigation in _layout.tsx\n            // listens to onAuthStateChange and redirects automatically\n        } catch {\n            // Error shown via the `error` state from useAuth\n        }\n    };"
+        },
+        {
+          "name": "render",
+          "line": 43,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        render={({ field: { onChange, onBlur, value } }) => (\n                            <View>\n                                <Text className=\"text-sm font-semibold text-gray-700 mb-1\">Email</Text>\n                                <TextInput\n                                    className=\"w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base\"\n                                    placeholder=\"you@example.com\"\n                                    onBlur={onBlur}\n                                    onChangeText={onChange}\n                                    value={value}\n                                    autoCapitalize=\"none\"\n                                    keyboardType=\"email-address\"\n                                    autoComplete=\"email\"\n                                />\n                                {errors.email && (\n                                    <Text className=\"text-red-500 text-xs mt-1\">{errors.email.message}</Text>\n  // ..."
+        },
+        {
+          "name": "render",
+          "line": 66,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                        render={({ field: { onChange, onBlur, value } }) => (\n                            <View>\n                                <Text className=\"text-sm font-semibold text-gray-700 mb-1\">Password</Text>\n                                <TextInput\n                                    className=\"w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base\"\n                                    placeholder=\"••••••••\"\n                                    secureTextEntry\n                                    onBlur={onBlur}\n                                    onChangeText={onChange}\n                                    value={value}\n                                    autoComplete=\"current-password\"\n                                />\n                                {errors.password && (\n                                    <Text className=\"text-red-500 text-xs mt-1\">{errors.password.message}</Text>\n                                )}\n  // ..."
+        }
+      ],
+      "functionCount": 4
+    },
+    {
+      "path": "apps/native/app/signup.tsx",
+      "name": "signup.tsx",
+      "folder": "apps/native/app",
+      "layer": "utils",
+      "lines": 204,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "SignupScreen",
+          "line": 24,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export default function SignupScreen() {\n    const { loading, error, signUp } = useAuth();\n    const [successMsg, setSuccessMsg] = useState<string | null>(null);\n\n    const { control, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<SignupFormData>({\n        resolver: zodResolver(signupSchema),\n        defaultValues: { fullName: '', email: '', phone: '', password: '', role: 'freelancer' },\n    });\n\n    const role = watch('role');\n\n    const onSubmit = async (data: SignupFormData) => {\n        try {\n            const result = await signUp(data.email, data.password, data.fullName, data.phone, data.role);\n            // If email confirmation is required, Supabase returns a user but no session\n  // ..."
+        },
+        {
+          "name": "onSubmit",
+          "line": 35,
+          "internalCalls": 1,
+          "externalCalls": 3,
+          "totalCalls": 4,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "signup.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "CreateGigScreen.tsx",
+              "count": 2
+            }
+          ],
+          "code": "    const onSubmit = async (data: SignupFormData) => {\n        try {\n            const result = await signUp(data.email, data.password, data.fullName, data.phone, data.role);\n            // If email confirmation is required, Supabase returns a user but no session\n            if (result?.user && !result?.session) {\n                setSuccessMsg('Account created! Please check your email to confirm your account.');\n                reset();\n            }\n            // If email confirmation is off, onAuthStateChange fires and\n            // RootNavigation in _layout.tsx handles the redirect automatically\n        } catch {\n            // Error shown via the `error` state from useAuth\n        }\n    };"
+        },
+        {
+          "name": "onPress",
+          "line": 71,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                    onPress={() => setValue('role', 'freelancer')}"
+        },
+        {
+          "name": "onPress",
+          "line": 79,
+          "internalCalls": 2,
+          "externalCalls": 0,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                    onPress={() => setValue('role', 'company')}"
+        },
+        {
+          "name": "render",
+          "line": 90,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, onBlur, value } }) => (\n                                    <View>\n                                        <Text className=\"text-sm font-semibold text-gray-700 mb-1\">Full Name</Text>\n                                        <TextInput\n                                            className=\"w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base\"\n                                            placeholder=\"Jane Smith\"\n                                            onBlur={onBlur}\n                                            onChangeText={onChange}\n                                            value={value}\n                                            autoComplete=\"name\"\n                                        />\n                                        {errors.fullName && (\n                                            <Text className=\"text-red-500 text-xs mt-1\">{errors.fullName.message}</Text>\n                                        )}\n                                    </View>\n  // ..."
+        },
+        {
+          "name": "render",
+          "line": 111,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, onBlur, value } }) => (\n                                    <View>\n                                        <Text className=\"text-sm font-semibold text-gray-700 mb-1\">Email</Text>\n                                        <TextInput\n                                            className=\"w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base\"\n                                            placeholder=\"you@example.com\"\n                                            onBlur={onBlur}\n                                            onChangeText={onChange}\n                                            value={value}\n                                            autoCapitalize=\"none\"\n                                            keyboardType=\"email-address\"\n                                            autoComplete=\"email\"\n                                        />\n                                        {errors.email && (\n                                            <Text className=\"text-red-500 text-xs mt-1\">{errors.email.message}</Text>\n  // ..."
+        },
+        {
+          "name": "render",
+          "line": 134,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, onBlur, value } }) => (\n                                    <View>\n                                        <Text className=\"text-sm font-semibold text-gray-700 mb-1\">Phone Number</Text>\n                                        <TextInput\n                                            className=\"w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base\"\n                                            placeholder=\"+12025551234\"\n                                            onBlur={onBlur}\n                                            onChangeText={onChange}\n                                            value={value}\n                                            keyboardType=\"phone-pad\"\n                                            autoComplete=\"tel\"\n                                        />\n                                        {errors.phone && (\n                                            <Text className=\"text-red-500 text-xs mt-1\">{errors.phone.message}</Text>\n                                        )}\n  // ..."
+        },
+        {
+          "name": "render",
+          "line": 156,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, onBlur, value } }) => (\n                                    <View>\n                                        <Text className=\"text-sm font-semibold text-gray-700 mb-1\">Password</Text>\n                                        <TextInput\n                                            className=\"w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base\"\n                                            placeholder=\"••••••••••••\"\n                                            secureTextEntry\n                                            onBlur={onBlur}\n                                            onChangeText={onChange}\n                                            value={value}\n                                            autoComplete=\"new-password\"\n                                        />\n                                        {errors.password && (\n                                            <Text className=\"text-red-500 text-xs mt-1\">{errors.password.message}</Text>\n                                        )}\n  // ..."
+        }
+      ],
+      "functionCount": 8
+    },
+    {
+      "path": "apps/native/babel.config.js",
+      "name": "babel.config.js",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 12,
+      "churn": 1,
+      "isCode": true,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/components/CreateGigScreen.tsx",
+      "name": "CreateGigScreen.tsx",
+      "folder": "apps/native/components",
+      "layer": "components",
+      "lines": 174,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "CreateGigScreen",
+          "line": 16,
+          "internalCalls": 0,
+          "externalCalls": 1,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export function CreateGigScreen({ visible, onClose, onSubmit, isLoading }: CreateGigScreenProps) {\n    const { control, handleSubmit, formState: { errors }, reset } = useForm<GigFormValues>({\n        resolver: zodResolver(gigSchema),\n        defaultValues: {\n            title: '',\n            description: '',\n            category: '',\n            location: '',\n            pay_amount: 10,\n            scheduled_at: new Date().toISOString().slice(0, 16),\n        }\n    });\n\n    const handleFormSubmit = async (data: GigFormValues) => {\n        await onSubmit(data);\n  // ..."
+        },
+        {
+          "name": "handleFormSubmit",
+          "line": 29,
+          "internalCalls": 1,
+          "externalCalls": 0,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [],
+          "code": "    const handleFormSubmit = async (data: GigFormValues) => {\n        await onSubmit(data);\n        reset();\n    };"
+        },
+        {
+          "name": "render",
+          "line": 53,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                            render={({ field: { onChange, value } }) => (\n                                <TextInput\n                                    className={`bg-white border ${errors.title ? 'border-red-400' : 'border-gray-200'} rounded-2xl p-4 text-gray-900 font-medium`}\n                                    placeholder=\"e.g. Install Office Network\"\n                                    value={value}\n                                    onChangeText={onChange}\n                                />"
+        },
+        {
+          "name": "render",
+          "line": 71,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, value } }) => (\n                                    <TextInput\n                                        className={`bg-white border ${errors.category ? 'border-red-400' : 'border-gray-200'} rounded-2xl p-4 text-gray-900 font-medium`}\n                                        placeholder=\"Networking\"\n                                        value={value}\n                                        onChangeText={onChange}\n                                    />"
+        },
+        {
+          "name": "render",
+          "line": 87,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, value } }) => (\n                                    <TextInput\n                                        className={`bg-white border ${errors.location ? 'border-red-400' : 'border-gray-200'} rounded-2xl p-4 text-gray-900 font-medium`}\n                                        placeholder=\"123 Main St\"\n                                        value={value}\n                                        onChangeText={onChange}\n                                    />"
+        },
+        {
+          "name": "render",
+          "line": 106,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, value } }) => (\n                                    <TextInput\n                                        className={`bg-white border ${errors.pay_amount ? 'border-red-400' : 'border-gray-200'} rounded-2xl p-4 text-gray-900 font-medium`}\n                                        keyboardType=\"numeric\"\n                                        value={value.toString()}\n                                        onChangeText={val => onChange(Number(val))}\n                                    />"
+        },
+        {
+          "name": "onChangeText",
+          "line": 111,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                        onChangeText={val => onChange(Number(val))}"
+        },
+        {
+          "name": "render",
+          "line": 122,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                                render={({ field: { onChange, value } }) => (\n                                    <TextInput\n                                        className={`bg-white border ${errors.scheduled_at ? 'border-red-400' : 'border-gray-200'} rounded-2xl p-4 text-gray-900 font-medium`}\n                                        placeholder=\"YYYY-MM-DD\"\n                                        value={value}\n                                        onChangeText={onChange}\n                                    />"
+        },
+        {
+          "name": "render",
+          "line": 139,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "method",
+          "callers": [],
+          "code": "                            render={({ field: { onChange, value } }) => (\n                                <TextInput\n                                    className={`bg-white border ${errors.description ? 'border-red-400' : 'border-gray-200'} rounded-2xl p-4 text-gray-900 font-medium`}\n                                    placeholder=\"Describe the job requirements...\"\n                                    multiline\n                                    numberOfLines={4}\n                                    textAlignVertical=\"top\"\n                                    value={value}\n                                    onChangeText={onChange}\n                                />"
+        }
+      ],
+      "functionCount": 9
+    },
+    {
+      "path": "apps/native/components/maps/NativeMapViewer.native.tsx",
+      "name": "NativeMapViewer.native.tsx",
+      "folder": "apps/native/components/maps",
+      "layer": "components",
+      "lines": 100,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "NativeMapViewer",
+          "line": 12,
+          "internalCalls": 0,
+          "externalCalls": 1,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export default function NativeMapViewer({ latitude: initialLat, longitude: initialLng, gigId }: NativeMapViewerProps) {\n    const [lat, setLat] = useState(initialLat || 37.7749);\n    const [lng, setLng] = useState(initialLng || -122.4194);\n\n    useEffect(() => {\n        if (!gigId) return;\n\n        const fetchCoords = async () => {\n            const { data, error } = await supabase\n                .from('gigs')\n                .select('current_lat, current_lng')\n                .eq('id', gigId)\n                .single();\n\n            if (data?.current_lat && data?.current_lng) {\n  // ..."
+        },
+        {
+          "name": "fetchCoords",
+          "line": 19,
+          "internalCalls": 1,
+          "externalCalls": 0,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [],
+          "code": "        const fetchCoords = async () => {\n            const { data, error } = await supabase\n                .from('gigs')\n                .select('current_lat, current_lng')\n                .eq('id', gigId)\n                .single();\n\n            if (data?.current_lat && data?.current_lng) {\n                setLat(data.current_lat);\n                setLng(data.current_lng);\n            }\n        };"
+        }
+      ],
+      "functionCount": 2
+    },
+    {
+      "path": "apps/native/components/maps/NativeMapViewer.tsx",
+      "name": "NativeMapViewer.tsx",
+      "folder": "apps/native/components/maps",
+      "layer": "components",
+      "lines": 44,
+      "churn": 1,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "NativeMapViewer",
+          "line": 10,
+          "internalCalls": 0,
+          "externalCalls": 1,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export default function NativeMapViewer({ latitude, longitude, gigId }: NativeMapViewerProps) {\n    return (\n        <View style={styles.container}>\n            <Text style={styles.text}>Live Tracking (Native iOS/Android Only)</Text>\n            <Text style={styles.subtext}>Open on mobile app to view Leaflet Map</Text>\n        </View>\n    );\n}"
+        }
+      ],
+      "functionCount": 1
+    },
+    {
+      "path": "apps/native/contexts/AuthContext.tsx",
+      "name": "AuthContext.tsx",
+      "folder": "apps/native/contexts",
+      "layer": "utils",
+      "lines": 159,
+      "churn": 0,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "AuthProvider",
+          "line": 24,
+          "internalCalls": 0,
+          "externalCalls": 1,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/_layout.tsx",
+              "name": "_layout.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export function AuthProvider({ children }: { children: React.ReactNode }) {\n    const [user, setUser] = useState<any | null>(null);\n    const [profile, setProfile] = useState<Profile | null>(null);\n    const [isLoading, setIsLoading] = useState(true);\n    const [loading, setLoading] = useState(false);\n    const [error, setError] = useState<string | null>(null);\n\n    const fetchProfile = useCallback(async (userId: string) => {\n        try {\n            const { data, error: profileError } = await supabase\n                .from('technicians')\n                .select('*')\n                .eq('id', userId)\n                .single();\n\n  // ..."
+        },
+        {
+          "name": "getInitialSession",
+          "line": 55,
+          "internalCalls": 1,
+          "externalCalls": 0,
+          "totalCalls": 1,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [],
+          "code": "        const getInitialSession = async () => {\n            try {\n                const { data: { session } } = await supabase.auth.getSession();\n                if (!mounted) return;\n                const currentUser = session?.user ?? null;\n                setUser(currentUser);\n                if (currentUser) {\n                    await fetchProfile(currentUser.id);\n                }\n            } catch (err: any) {\n                console.warn('Initial session error:', err.message);\n            } finally {\n                if (mounted) setIsLoading(false);\n            }\n        };\n  // ..."
+        },
+        {
+          "name": "signIn",
+          "line": 100,
+          "internalCalls": 1,
+          "externalCalls": 2,
+          "totalCalls": 3,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "apps/native/app/login.tsx",
+              "name": "login.tsx",
+              "count": 2
+            }
+          ],
+          "code": "    const signIn = async (email: string, password: string) => {\n        setLoading(true);\n        setError(null);\n        try {\n            const { error } = await supabase.auth.signInWithPassword({ email, password });\n            if (error) throw error;\n            // onAuthStateChange will fire and update user/profile automatically\n        } catch (err: any) {\n            setError(err.message);\n            throw err;\n        } finally {\n            setLoading(false);\n        }\n    };"
+        },
+        {
+          "name": "signUp",
+          "line": 115,
+          "internalCalls": 1,
+          "externalCalls": 2,
+          "totalCalls": 3,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "signup.tsx",
+              "count": 2
+            }
+          ],
+          "code": "    const signUp = async (email: string, password: string, fullName: string, phone: string, role: string) => {\n        setLoading(true);\n        setError(null);\n        try {\n            const { data, error } = await supabase.auth.signUp({\n                email,\n                password,\n                options: { data: { full_name: fullName, phone, role } }\n            });\n            if (error) throw error;\n            return data;\n        } catch (err: any) {\n            setError(err.message);\n            throw err;\n        } finally {\n  // ..."
+        },
+        {
+          "name": "signOut",
+          "line": 134,
+          "internalCalls": 1,
+          "externalCalls": 8,
+          "totalCalls": 9,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/admin/index.tsx",
+              "name": "index.tsx",
+              "count": 2
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 2
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "name": "index.tsx",
+              "count": 2
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+              "name": "profile.tsx",
+              "count": 2
+            }
+          ],
+          "code": "    const signOut = async () => {\n        setLoading(true);\n        try {\n            await supabase.auth.signOut();\n            setUser(null);\n            setProfile(null);\n        } catch (err: any) {\n            console.error('Sign out error:', err.message);\n        } finally {\n            setLoading(false);\n        }\n    };"
+        },
+        {
+          "name": "useAuth",
+          "line": 154,
+          "internalCalls": 0,
+          "externalCalls": 9,
+          "totalCalls": 9,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/admin/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+              "name": "gigs.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "name": "my-work.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+              "name": "profile.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/_layout.tsx",
+              "name": "_layout.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/login.tsx",
+              "name": "login.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "signup.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export function useAuth(): AuthContextType {\n    const ctx = useContext(AuthContext);\n    if (!ctx) throw new Error('useAuth must be used within AuthProvider');\n    return ctx;\n}"
+        }
+      ],
+      "functionCount": 6
+    },
+    {
+      "path": "apps/native/flashlight-measure-help-utf8.txt",
+      "name": "flashlight-measure-help-utf8.txt",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 11,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/flashlight-measure-help.txt",
+      "name": "flashlight-measure-help.txt",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 11,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/flashlight-test-help-utf8.txt",
+      "name": "flashlight-test-help-utf8.txt",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 29,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/flashlight-test-help.txt",
+      "name": "flashlight-test-help.txt",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 29,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/global.css",
+      "name": "global.css",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 17,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/hooks/useAuth.ts",
+      "name": "useAuth.ts",
+      "folder": "apps/native/hooks",
+      "layer": "utils",
+      "lines": 12,
+      "churn": 0,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "useAuth",
+          "line": 8,
+          "internalCalls": 0,
+          "externalCalls": 9,
+          "totalCalls": 9,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/admin/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+              "name": "gigs.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "name": "my-work.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+              "name": "profile.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/_layout.tsx",
+              "name": "_layout.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/login.tsx",
+              "name": "login.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "signup.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export const useAuth = () => {\n    const router = useRouter();\n    return useAuthBase(router);\n};"
+        }
+      ],
+      "functionCount": 1
+    },
+    {
+      "path": "apps/native/hooks/useCompanyGigs.ts",
+      "name": "useCompanyGigs.ts",
+      "folder": "apps/native/hooks",
+      "layer": "utils",
+      "lines": 93,
+      "churn": 0,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "useCompanyGigs",
+          "line": 5,
+          "internalCalls": 0,
+          "externalCalls": 2,
+          "totalCalls": 2,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "README.md",
+              "name": "README.md",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export function useCompanyGigs(companyId: string) {\n    const [companyGigs, setCompanyGigs] = useState<Gig[]>([]);\n    const [isLoading, setIsLoading] = useState(true);\n    const [isCreating, setIsCreating] = useState(false);\n    const [isPaying, setIsPaying] = useState(false);\n    const [error, setError] = useState<Error | null>(null);\n\n    const fetchGigs = useCallback(async () => {\n        if (!companyId) return;\n        setIsLoading(true);\n        try {\n            const { data, error } = await supabase\n                .from('gigs')\n                .select('*')\n                .eq('company_id', companyId)\n  // ..."
+        },
+        {
+          "name": "createGig",
+          "line": 48,
+          "internalCalls": 1,
+          "externalCalls": 4,
+          "totalCalls": 5,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "README.md",
+              "name": "README.md",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 3
+            }
+          ],
+          "code": "    const createGig = async (gigData: Omit<Gig, 'id' | 'created_at' | 'status'>) => {\n        setIsCreating(true);\n        try {\n            const { error } = await supabase\n                .from('gigs')\n                .insert([{\n                    ...gigData,\n                    status: 'pending_admin'\n                }]);\n            if (error) throw error;\n            await fetchGigs();\n        } catch (err: any) {\n            throw err;\n        } finally {\n            setIsCreating(false);\n  // ..."
+        },
+        {
+          "name": "payForGig",
+          "line": 66,
+          "internalCalls": 1,
+          "externalCalls": 3,
+          "totalCalls": 4,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "name": "index.tsx",
+              "count": 3
+            }
+          ],
+          "code": "    const payForGig = async (gigId: string) => {\n        setIsPaying(true);\n        try {\n            const { error } = await supabase\n                .from('gigs')\n                .update({ status: 'available' })\n                .eq('id', gigId)\n                .eq('status', 'awaiting_payment');\n            if (error) throw error;\n            await fetchGigs();\n        } catch (err: any) {\n            throw err;\n        } finally {\n            setIsPaying(false);\n        }\n  // ..."
+        }
+      ],
+      "functionCount": 3
+    },
+    {
+      "path": "apps/native/hooks/useGeofence.ts",
+      "name": "useGeofence.ts",
+      "folder": "apps/native/hooks",
+      "layer": "utils",
+      "lines": 73,
+      "churn": 0,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "getDistanceInMeters",
+          "line": 5,
+          "internalCalls": 1,
+          "externalCalls": 3,
+          "totalCalls": 4,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/tests/unit/hooks/useGeofence.test.ts",
+              "name": "useGeofence.test.ts",
+              "count": 3
+            }
+          ],
+          "code": "export function getDistanceInMeters(lat1: number, lon1: number, lat2: number, lon2: number) {\n    const R = 6371e3; // Earth radius in meters\n    const toRadians = (deg: number) => deg * (Math.PI / 180);\n\n    const phi1 = toRadians(lat1);\n    const phi2 = toRadians(lat2);\n    const deltaPhi = toRadians(lat2 - lat1);\n    const deltaLambda = toRadians(lon2 - lon1);\n\n    const a = Math.sin(deltaPhi / 2) * Math.sin(deltaPhi / 2) +\n        Math.cos(phi1) * Math.cos(phi2) *\n        Math.sin(deltaLambda / 2) * Math.sin(deltaLambda / 2);\n\n    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n    return R * c;\n  // ..."
+        },
+        {
+          "name": "toRadians",
+          "line": 7,
+          "internalCalls": 4,
+          "externalCalls": 0,
+          "totalCalls": 4,
+          "isUnused": false,
+          "isExported": false,
+          "isClassMethod": false,
+          "isTopLevel": false,
+          "type": "arrow",
+          "callers": [],
+          "code": "    const toRadians = (deg: number) => deg * (Math.PI / 180);"
+        },
+        {
+          "name": "useGeofence",
+          "line": 32,
+          "internalCalls": 0,
+          "externalCalls": 0,
+          "totalCalls": 0,
+          "isUnused": true,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [],
+          "code": "export function useGeofence(targetLat: number, targetLon: number, radiusMeters = 100) {\n    const [isAtJobSite, setIsAtJobSite] = useState(false);\n    const [currentDistance, setCurrentDistance] = useState<number | null>(null);\n    const [errorMsg, setErrorMsg] = useState<string | null>(null);\n\n    useEffect(() => {\n        let subscription: Location.LocationSubscription | null = null;\n\n        (async () => {\n            const { status } = await Location.requestForegroundPermissionsAsync();\n            if (status !== 'granted') {\n                setErrorMsg('Permission to access location was denied');\n                return;\n            }\n\n  // ..."
+        }
+      ],
+      "functionCount": 3
+    },
+    {
+      "path": "apps/native/hooks/useGigs.ts",
+      "name": "useGigs.ts",
+      "folder": "apps/native/hooks",
+      "layer": "utils",
+      "lines": 250,
+      "churn": 0,
+      "isCode": true,
+      "functions": [
+        {
+          "name": "useGigs",
+          "line": 28,
+          "internalCalls": 0,
+          "externalCalls": 3,
+          "totalCalls": 3,
+          "isUnused": false,
+          "isExported": true,
+          "isClassMethod": false,
+          "isTopLevel": true,
+          "type": "function",
+          "callers": [
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+              "name": "gigs.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "name": "index.tsx",
+              "count": 1
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "name": "my-work.tsx",
+              "count": 1
+            }
+          ],
+          "code": "export function useGigs(userId?: string, options: UseGigsOptions = {}) {\n    const loadAvailable = options.loadAvailable ?? true;\n    const loadMine = options.loadMine ?? true;\n    const realtime = options.realtime ?? true;\n\n    const [availableGigs, setAvailableGigs] = useState<Gig[]>([]);\n    const [myGigs, setMyGigs] = useState<Gig[]>([]);\n    const [isLoadingAvailable, setIsLoadingAvailable] = useState(loadAvailable);\n    const [isLoadingMine, setIsLoadingMine] = useState(Boolean(loadMine && userId));\n    const [isClaiming, setIsClaiming] = useState(false);\n    const [isUpdatingStatus, setIsUpdatingStatus] = useState(false);\n    const [isCompleting, setIsCompleting] = useState(false);\n    const [error, setError] = useState<string | null>(null);\n\n    const fetchAvailableGigs = useCallback(async () => {\n  // ..."
+        }
+      ],
+      "functionCount": 1
+    },
+    {
+      "path": "apps/native/lib/supabase.ts",
+      "name": "supabase.ts",
+      "folder": "apps/native/lib",
+      "layer": "utils",
+      "lines": 22,
+      "churn": 0,
+      "isCode": true,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/metro.config.js",
+      "name": "metro.config.js",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 23,
+      "churn": 0,
+      "isCode": true,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/nativewind-env.d.ts",
+      "name": "nativewind-env.d.ts",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 3,
+      "churn": 0,
+      "isCode": true,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/package-lock.json",
+      "name": "package-lock.json",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 9707,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/package.json",
+      "name": "package.json",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 50,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/results_1772323724771.json",
+      "name": "results_1772323724771.json",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 1,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/tailwind.config.js",
+      "name": "tailwind.config.js",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 14,
+      "churn": 0,
+      "isCode": true,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/tests/unit/hooks/useGeofence.test.ts",
+      "name": "useGeofence.test.ts",
+      "folder": "apps/native/tests/unit/hooks",
+      "layer": "test",
+      "lines": 57,
+      "churn": 0,
+      "isCode": true,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/native/tsconfig.json",
+      "name": "tsconfig.json",
+      "folder": "apps/native",
+      "layer": "utils",
+      "lines": 25,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/.gitignore",
+      "name": ".gitignore",
+      "folder": "apps/web",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/GUIDELINES.md",
+      "name": "GUIDELINES.md",
+      "folder": "apps/web",
+      "layer": "note",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/README.md",
+      "name": "README.md",
+      "folder": "apps/web",
+      "layer": "note",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/lighthouse-desktop.report.json",
+      "name": "lighthouse-desktop.report.json",
+      "folder": "apps/web",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/lighthouse-mobile.report.json",
+      "name": "lighthouse-mobile.report.json",
+      "folder": "apps/web",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/package.json",
+      "name": "package.json",
+      "folder": "apps/web",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/playwright-report.txt",
+      "name": "playwright-report.txt",
+      "folder": "apps/web",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/public/robots.txt",
+      "name": "robots.txt",
+      "folder": "apps/web/public",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/src/app/globals.css",
+      "name": "globals.css",
+      "folder": "apps/web/src/app",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "name": "tsconfig.json",
+      "folder": "apps/web",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "desktop_test.json",
+      "name": "desktop_test.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "mobile_test.json",
+      "name": "mobile_test.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "native_desktop_full.json",
+      "name": "native_desktop_full.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "native_desktop_test.json",
+      "name": "native_desktop_test.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "native_mobile_full.json",
+      "name": "native_mobile_full.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "native_mobile_test.json",
+      "name": "native_mobile_test.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "packages/ui/package.json",
+      "name": "package.json",
+      "folder": "packages/ui",
+      "layer": "ui",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "packages/ui/tsconfig.json",
+      "name": "tsconfig.json",
+      "folder": "packages/ui",
+      "layer": "ui",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "packages/utils/package.json",
+      "name": "package.json",
+      "folder": "packages/utils",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "packages/utils/tsconfig.json",
+      "name": "tsconfig.json",
+      "folder": "packages/utils",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "name": "pnpm-lock.yaml",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "name": "pnpm-workspace.yaml",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "tsconfig.base.json",
+      "name": "tsconfig.base.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "turbo.json",
+      "name": "turbo.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "web_after_desktop.json",
+      "name": "web_after_desktop.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "web_after_mobile.json",
+      "name": "web_after_mobile.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "web_desktop_full.json",
+      "name": "web_desktop_full.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    },
+    {
+      "path": "web_mobile_full.json",
+      "name": "web_mobile_full.json",
+      "folder": "root",
+      "layer": "utils",
+      "lines": 0,
+      "churn": 0,
+      "isCode": false,
+      "functions": [],
+      "functionCount": 0
+    }
+  ],
+  "unusedFunctions": [],
+  "dependencies": [
+    {
+      "from": "apps/native/hooks/useCompanyGigs.ts",
+      "to": "README.md",
+      "function": "useCompanyGigs",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/hooks/useCompanyGigs.ts",
+      "to": "README.md",
+      "function": "createGig",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/admin/index.tsx",
+      "function": "signOut",
+      "callCount": 2
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/admin/index.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/components/CreateGigScreen.tsx",
+      "to": "apps/native/app/(dashboard)/company/index.tsx",
+      "function": "CreateGigScreen",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/components/maps/NativeMapViewer.native.tsx",
+      "to": "apps/native/app/(dashboard)/company/index.tsx",
+      "function": "NativeMapViewer",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/company/index.tsx",
+      "function": "signOut",
+      "callCount": 2
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/company/index.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/hooks/useCompanyGigs.ts",
+      "to": "apps/native/app/(dashboard)/company/index.tsx",
+      "function": "useCompanyGigs",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/hooks/useCompanyGigs.ts",
+      "to": "apps/native/app/(dashboard)/company/index.tsx",
+      "function": "createGig",
+      "callCount": 3
+    },
+    {
+      "from": "apps/native/hooks/useCompanyGigs.ts",
+      "to": "apps/native/app/(dashboard)/company/index.tsx",
+      "function": "payForGig",
+      "callCount": 3
+    },
+    {
+      "from": "apps/native/app/index.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/_layout.tsx",
+      "function": "Home",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/app/(dashboard)/admin/index.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+      "function": "onRefresh",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/hooks/useGigs.ts",
+      "to": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+      "function": "useGigs",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/index.tsx",
+      "function": "signOut",
+      "callCount": 2
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/index.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/hooks/useGigs.ts",
+      "to": "apps/native/app/(dashboard)/freelancer/index.tsx",
+      "function": "useGigs",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/app/(dashboard)/admin/index.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+      "function": "onRefresh",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/hooks/useGigs.ts",
+      "to": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+      "function": "useGigs",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+      "function": "signOut",
+      "callCount": 2
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/_layout.tsx",
+      "function": "AuthProvider",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/_layout.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/login.tsx",
+      "function": "signIn",
+      "callCount": 2
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/login.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/app/login.tsx",
+      "to": "apps/native/app/signup.tsx",
+      "function": "onSubmit",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/signup.tsx",
+      "function": "signUp",
+      "callCount": 2
+    },
+    {
+      "from": "apps/native/contexts/AuthContext.tsx",
+      "to": "apps/native/app/signup.tsx",
+      "function": "useAuth",
+      "callCount": 1
+    },
+    {
+      "from": "apps/native/app/(dashboard)/company/index.tsx",
+      "to": "apps/native/components/CreateGigScreen.tsx",
+      "function": "onClose",
+      "callCount": 4
+    },
+    {
+      "from": "apps/native/app/login.tsx",
+      "to": "apps/native/components/CreateGigScreen.tsx",
+      "function": "onSubmit",
+      "callCount": 2
+    },
+    {
+      "from": "apps/native/hooks/useGeofence.ts",
+      "to": "apps/native/tests/unit/hooks/useGeofence.test.ts",
+      "function": "getDistanceInMeters",
+      "callCount": 3
+    }
+  ],
+  "architectureIssues": [
+    {
+      "type": "critical",
+      "title": "1 Circular Dependencies",
+      "description": "Files that import each other",
+      "affectedFiles": [
+        "index.tsx ↔ CreateGigScreen.tsx"
+      ],
+      "affectedItems": [
+        {
+          "name": "index.tsx ↔ CreateGigScreen.tsx",
+          "files": [
+            "apps/native/app/(dashboard)/company/index.tsx",
+            "apps/native/components/CreateGigScreen.tsx"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "warning",
+      "title": "2 Duplicate Function Names",
+      "description": "Same function name in multiple files",
+      "affectedFiles": [
+        "onPress (6 files)",
+        "keyExtractor (3 files)"
+      ],
+      "affectedItems": [
+        {
+          "name": "onPress (6 files)",
+          "suggestion": "Function \"onPress\" appears in 6 files with 100% similarity - consider consolidating",
+          "files": [
+            {
+              "file": "apps/native/app/(dashboard)/admin/index.tsx",
+              "line": 99
+            },
+            {
+              "file": "apps/native/app/(dashboard)/admin/index.tsx",
+              "line": 106
+            },
+            {
+              "file": "apps/native/app/(dashboard)/admin/index.tsx",
+              "line": 114
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "line": 81
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "line": 103
+            },
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "line": 222
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+              "line": 71
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "line": 77
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "line": 90
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "line": 146
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "line": 97
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "line": 104
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "line": 114
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "line": 140
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "line": 292
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "line": 71
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "line": 79
+            }
+          ],
+          "count": 6
+        },
+        {
+          "name": "keyExtractor (3 files)",
+          "suggestion": "Function \"keyExtractor\" appears in 3 files with 91% similarity - consider consolidating",
+          "files": [
+            {
+              "file": "apps/native/app/(dashboard)/company/index.tsx",
+              "line": 243
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+              "line": 138
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "line": 266
+            }
+          ],
+          "count": 3
+        }
+      ]
+    },
+    {
+      "type": "warning",
+      "title": "2 Similar Code Blocks",
+      "description": "Copy-paste code detected",
+      "affectedFiles": [
+        "onPress, onPress, onPress, onPress, onPress, onPress, onPress",
+        "render, render, render, render, render, render, render, render, render, render, render"
+      ],
+      "affectedItems": [
+        {
+          "name": "onPress, onPress, onPress, onPress, onPress, onPress, onPress",
+          "suggestion": "Similar code blocks (100% match) - consider extracting to a shared utility",
+          "files": [
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "name": "onPress",
+              "line": 77
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "name": "onPress",
+              "line": 90
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+              "name": "onPress",
+              "line": 146
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "name": "onPress",
+              "line": 97
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "name": "onPress",
+              "line": 104
+            },
+            {
+              "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+              "name": "onPress",
+              "line": 292
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "onPress",
+              "line": 71
+            }
+          ]
+        },
+        {
+          "name": "render, render, render, render, render, render, render, render, render, render, render",
+          "suggestion": "Similar code blocks (85% match) - consider extracting to a shared utility",
+          "files": [
+            {
+              "file": "apps/native/app/login.tsx",
+              "name": "render",
+              "line": 43
+            },
+            {
+              "file": "apps/native/app/login.tsx",
+              "name": "render",
+              "line": 66
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "render",
+              "line": 90
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "render",
+              "line": 111
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "render",
+              "line": 134
+            },
+            {
+              "file": "apps/native/app/signup.tsx",
+              "name": "render",
+              "line": 156
+            },
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "render",
+              "line": 53
+            },
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "render",
+              "line": 71
+            },
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "render",
+              "line": 87
+            },
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "render",
+              "line": 122
+            },
+            {
+              "file": "apps/native/components/CreateGigScreen.tsx",
+              "name": "render",
+              "line": 139
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "critical",
+      "title": "2 Architecture Violations",
+      "description": "Lower layers importing from higher layers",
+      "affectedFiles": [
+        "apps/native/app/(dashboard)/company/index.tsx",
+        "apps/native/app/login.tsx"
+      ],
+      "affectedItems": [
+        {
+          "name": "utils → components",
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "toFile": "apps/native/components/CreateGigScreen.tsx",
+          "fn": "onClose",
+          "suggestion": "utils should not import from components. Consider inverting the dependency or using dependency injection."
+        },
+        {
+          "name": "utils → components",
+          "file": "apps/native/app/login.tsx",
+          "toFile": "apps/native/components/CreateGigScreen.tsx",
+          "fn": "onSubmit",
+          "suggestion": "utils should not import from components. Consider inverting the dependency or using dependency injection."
+        }
+      ]
+    },
+    {
+      "type": "warning",
+      "title": "2 High Complexity Files",
+      "description": "Files with complexity score >30",
+      "affectedFiles": [
+        "apps/native/app/(dashboard)/company/index.tsx",
+        "apps/native/hooks/useGigs.ts"
+      ],
+      "affectedItems": [
+        {
+          "name": "index.tsx (33)",
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "score": 33,
+          "lines": 258
+        },
+        {
+          "name": "useGigs.ts (32)",
+          "file": "apps/native/hooks/useGigs.ts",
+          "score": 32,
+          "lines": 250
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Factory",
+      "description": "Creates objects without specifying exact class. Enables loose coupling and extensibility.",
+      "isAntiPattern": false,
+      "severity": "info",
+      "icon": "factory",
+      "files": [
+        "README.md",
+        "apps/native/app/(dashboard)/company/index.tsx",
+        "apps/native/hooks/useAuth.ts",
+        "apps/native/lib/supabase.ts"
+      ],
+      "fileDetails": [
+        {
+          "name": "README.md",
+          "path": "README.md"
+        },
+        {
+          "name": "index.tsx",
+          "path": "apps/native/app/(dashboard)/company/index.tsx"
+        },
+        {
+          "name": "useAuth.ts",
+          "path": "apps/native/hooks/useAuth.ts"
+        },
+        {
+          "name": "supabase.ts",
+          "path": "apps/native/lib/supabase.ts"
+        }
+      ],
+      "metrics": {
+        "factories": 4
+      }
+    },
+    {
+      "name": "Observer/Event",
+      "description": "Defines a subscription mechanism for event-driven architecture. Great for decoupling.",
+      "isAntiPattern": false,
+      "severity": "info",
+      "icon": "eye",
+      "files": [
+        "apps/native/components/maps/NativeMapViewer.native.tsx",
+        "apps/native/contexts/AuthContext.tsx",
+        "apps/native/hooks/useCompanyGigs.ts",
+        "apps/native/hooks/useGigs.ts"
+      ],
+      "fileDetails": [
+        {
+          "name": "NativeMapViewer.native.tsx",
+          "path": "apps/native/components/maps/NativeMapViewer.native.tsx"
+        },
+        {
+          "name": "AuthContext.tsx",
+          "path": "apps/native/contexts/AuthContext.tsx"
+        },
+        {
+          "name": "useCompanyGigs.ts",
+          "path": "apps/native/hooks/useCompanyGigs.ts"
+        },
+        {
+          "name": "useGigs.ts",
+          "path": "apps/native/hooks/useGigs.ts"
+        }
+      ],
+      "metrics": {
+        "emitters": 4
+      }
+    },
+    {
+      "name": "Custom Hooks",
+      "description": "React hooks for reusable stateful logic. Promotes code reuse and separation of concerns.",
+      "isAntiPattern": false,
+      "severity": "info",
+      "icon": "hook",
+      "files": [
+        "apps/native/contexts/AuthContext.tsx",
+        "apps/native/hooks/useAuth.ts",
+        "apps/native/hooks/useCompanyGigs.ts",
+        "apps/native/hooks/useGeofence.ts",
+        "apps/native/hooks/useGigs.ts"
+      ],
+      "fileDetails": [
+        {
+          "name": "AuthContext.tsx",
+          "path": "apps/native/contexts/AuthContext.tsx"
+        },
+        {
+          "name": "useAuth.ts",
+          "path": "apps/native/hooks/useAuth.ts"
+        },
+        {
+          "name": "useCompanyGigs.ts",
+          "path": "apps/native/hooks/useCompanyGigs.ts"
+        },
+        {
+          "name": "useGeofence.ts",
+          "path": "apps/native/hooks/useGeofence.ts"
+        },
+        {
+          "name": "useGigs.ts",
+          "path": "apps/native/hooks/useGigs.ts"
+        }
+      ],
+      "metrics": {
+        "hooks": 5
+      }
+    },
+    {
+      "name": "Context Provider",
+      "description": "React Context for global state. Alternative to prop drilling.",
+      "isAntiPattern": false,
+      "severity": "info",
+      "icon": "globe",
+      "files": [
+        "apps/native/app/_layout.tsx",
+        "apps/native/contexts/AuthContext.tsx"
+      ],
+      "fileDetails": [
+        {
+          "name": "_layout.tsx",
+          "path": "apps/native/app/_layout.tsx"
+        },
+        {
+          "name": "AuthContext.tsx",
+          "path": "apps/native/contexts/AuthContext.tsx"
+        }
+      ],
+      "metrics": {
+        "contexts": 2
+      }
+    }
+  ],
+  "securityIssues": [
+    {
+      "severity": "low",
+      "title": "Code Comments",
+      "description": "1 TODO/FIXME comments found. Address before release.",
+      "file": "README.md",
+      "path": "README.md",
+      "code": ""
+    }
+  ],
+  "duplicates": [
+    {
+      "type": "name",
+      "name": "onPress",
+      "count": 6,
+      "files": [
+        {
+          "file": "apps/native/app/(dashboard)/admin/index.tsx",
+          "line": 99
+        },
+        {
+          "file": "apps/native/app/(dashboard)/admin/index.tsx",
+          "line": 106
+        },
+        {
+          "file": "apps/native/app/(dashboard)/admin/index.tsx",
+          "line": 114
+        },
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "line": 81
+        },
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "line": 103
+        },
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "line": 222
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+          "line": 71
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "line": 77
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "line": 90
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "line": 146
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "line": 97
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "line": 104
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "line": 114
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "line": 140
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "line": 292
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "line": 71
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "line": 79
+        }
+      ],
+      "similarity": 100,
+      "suggestion": "Function \"onPress\" appears in 6 files with 100% similarity - consider consolidating"
+    },
+    {
+      "type": "name",
+      "name": "keyExtractor",
+      "count": 3,
+      "files": [
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "line": 243
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+          "line": 138
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "line": 266
+        }
+      ],
+      "similarity": 91,
+      "suggestion": "Function \"keyExtractor\" appears in 3 files with 91% similarity - consider consolidating"
+    },
+    {
+      "type": "code",
+      "name": "onPress, onPress, onPress, onPress, onPress, onPress, onPress",
+      "count": 7,
+      "files": [
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "name": "onPress",
+          "line": 77
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "name": "onPress",
+          "line": 90
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "name": "onPress",
+          "line": 146
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "name": "onPress",
+          "line": 97
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "name": "onPress",
+          "line": 104
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "name": "onPress",
+          "line": 292
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "onPress",
+          "line": 71
+        }
+      ],
+      "similarity": 100,
+      "suggestion": "Similar code blocks (100% match) - consider extracting to a shared utility"
+    },
+    {
+      "type": "code",
+      "name": "render, render, render, render, render, render, render, render, render, render, render",
+      "count": 11,
+      "files": [
+        {
+          "file": "apps/native/app/login.tsx",
+          "name": "render",
+          "line": 43
+        },
+        {
+          "file": "apps/native/app/login.tsx",
+          "name": "render",
+          "line": 66
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "render",
+          "line": 90
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "render",
+          "line": 111
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "render",
+          "line": 134
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "render",
+          "line": 156
+        },
+        {
+          "file": "apps/native/components/CreateGigScreen.tsx",
+          "name": "render",
+          "line": 53
+        },
+        {
+          "file": "apps/native/components/CreateGigScreen.tsx",
+          "name": "render",
+          "line": 71
+        },
+        {
+          "file": "apps/native/components/CreateGigScreen.tsx",
+          "name": "render",
+          "line": 87
+        },
+        {
+          "file": "apps/native/components/CreateGigScreen.tsx",
+          "name": "render",
+          "line": 122
+        },
+        {
+          "file": "apps/native/components/CreateGigScreen.tsx",
+          "name": "render",
+          "line": 139
+        }
+      ],
+      "similarity": 85,
+      "suggestion": "Similar code blocks (85% match) - consider extracting to a shared utility"
+    }
+  ],
+  "layerViolations": [
+    {
+      "from": "apps/native/app/(dashboard)/company/index.tsx",
+      "fromLayer": "utils",
+      "to": "apps/native/components/CreateGigScreen.tsx",
+      "toLayer": "components",
+      "fn": "onClose",
+      "suggestion": "utils should not import from components. Consider inverting the dependency or using dependency injection."
+    },
+    {
+      "from": "apps/native/app/login.tsx",
+      "fromLayer": "utils",
+      "to": "apps/native/components/CreateGigScreen.tsx",
+      "toLayer": "components",
+      "fn": "onSubmit",
+      "suggestion": "utils should not import from components. Consider inverting the dependency or using dependency injection."
+    }
+  ],
+  "suggestions": [
+    {
+      "priority": "critical",
+      "icon": "refresh",
+      "title": "Break Circular Dependencies",
+      "desc": "1 circular dependencies found. These cause tight coupling and make testing difficult.",
+      "action": "Extract shared code to a new module or use dependency injection",
+      "impact": "Improves testability and modularity"
+    },
+    {
+      "priority": "high",
+      "icon": "box",
+      "title": "Extract Duplicated Code",
+      "desc": "2 instances of similar code found. DRY principle violation.",
+      "action": "Create shared utility functions",
+      "impact": "Reduces maintenance burden and potential bugs"
+    },
+    {
+      "priority": "high",
+      "icon": "layers",
+      "title": "Fix Architecture Violations",
+      "desc": "2 layer violations found. Lower layers should not depend on higher layers.",
+      "action": "Invert dependencies or use interfaces/events",
+      "impact": "Improves architecture and testability"
+    },
+    {
+      "priority": "medium",
+      "icon": "copy",
+      "title": "Resolve Naming Conflicts",
+      "desc": "2 function names are duplicated across files. This can cause confusion.",
+      "action": "Rename functions to be more specific or consolidate into shared module",
+      "impact": "Prevents bugs from importing wrong function"
+    },
+    {
+      "priority": "medium",
+      "icon": "beaker",
+      "title": "Add Test Coverage",
+      "desc": "Only 1 test files found (1%). Consider adding more tests.",
+      "action": "Focus on testing critical paths and high-complexity files",
+      "impact": "Prevents regressions and improves confidence"
+    }
+  ],
+  "languageBreakdown": [
+    {
+      "ext": "json",
+      "lines": 9825,
+      "pct": 76
+    },
+    {
+      "ext": "tsx",
+      "lines": 2222,
+      "pct": 17
+    },
+    {
+      "ext": "ts",
+      "lines": 510,
+      "pct": 4
+    },
+    {
+      "ext": "md",
+      "lines": 134,
+      "pct": 1
+    },
+    {
+      "ext": "gitignore",
+      "lines": 96,
+      "pct": 1
+    },
+    {
+      "ext": "txt",
+      "lines": 80,
+      "pct": 1
+    },
+    {
+      "ext": "js",
+      "lines": 49,
+      "pct": 0
+    },
+    {
+      "ext": "css",
+      "lines": 17,
+      "pct": 0
+    },
+    {
+      "ext": "prettierrc",
+      "lines": 8,
+      "pct": 0
+    },
+    {
+      "ext": "yaml",
+      "lines": 0,
+      "pct": 0
+    }
+  ],
+  "folderStructure": [
+    ".vscode",
+    "apps/native",
+    "apps/native/app",
+    "apps/native/app/(dashboard)",
+    "apps/native/app/(dashboard)/admin",
+    "apps/native/app/(dashboard)/company",
+    "apps/native/app/(dashboard)/freelancer",
+    "apps/native/components",
+    "apps/native/components/maps",
+    "apps/native/contexts",
+    "apps/native/hooks",
+    "apps/native/lib",
+    "apps/native/tests/unit/hooks",
+    "apps/web",
+    "apps/web/public",
+    "apps/web/src/app",
+    "packages/ui",
+    "packages/utils",
+    "root"
+  ],
+  "functionStatistics": [
+    {
+      "name": "DashboardLayout",
+      "file": "apps/native/app/(dashboard)/_layout.tsx",
+      "folder": "apps/native/app/(dashboard)",
+      "line": 3,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function DashboardLayout() {\n    return (\n        <Stack screenOptions={{ headerShown: false }} />\n    );\n}"
+    },
+    {
+      "name": "StatCard",
+      "file": "apps/native/app/(dashboard)/admin/index.tsx",
+      "folder": "apps/native/app/(dashboard)/admin",
+      "line": 8,
+      "internalCalls": 3,
+      "externalCalls": 0,
+      "totalCalls": 3,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "function StatCard({ label, count, color, icon: Icon, onPress }: any) {\n    const colorMap: Record<string, { bg: string; iconBg: string; iconColor: string }> = {\n        blue: { bg: '#eff6ff', iconBg: '#3b82f6', iconColor: '#fff' },\n        emerald: { bg: '#ecfdf5', iconBg: '#10b981', iconColor: '#fff' },\n        purple: { bg: '#f5f3ff', iconBg: '#8b5cf6', iconColor: '#fff' },\n    };\n    const colors = colorMap[color] || colorMap.blue;\n\n    return (\n        <TouchableOpacity\n            onPress={onPress}\n            className=\"flex-1 rounded-[2rem] p-5 items-center border\"\n            style={{ backgroundColor: colors.bg, borderColor: colors.bg }}\n        >\n            <View className=\"w-14 h-14 rounded-2xl items-center justify-center mb-3\" style={{ backgroundColor: colors.iconBg }}>\n  // ..."
+    },
+    {
+      "name": "AdminDashboard",
+      "file": "apps/native/app/(dashboard)/admin/index.tsx",
+      "folder": "apps/native/app/(dashboard)/admin",
+      "line": 31,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function AdminDashboard() {\n    const router = useRouter();\n    const { user, signOut } = useAuth();\n    const [stats, setStats] = useState({ pendingGigs: 0, pendingReview: 0, pendingDocs: 0 });\n    const [loading, setLoading] = useState(true);\n    const [refreshing, setRefreshing] = useState(false);\n\n    const fetchStats = async () => {\n        try {\n            const [gigsRes, reviewRes, docsRes] = await Promise.all([\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'available'),\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'pending_review'),\n                supabase.from('documents').select('id', { count: 'exact' }).eq('status', 'pending'),\n            ]);\n            setStats({\n  // ..."
+    },
+    {
+      "name": "fetchStats",
+      "file": "apps/native/app/(dashboard)/admin/index.tsx",
+      "folder": "apps/native/app/(dashboard)/admin",
+      "line": 38,
+      "internalCalls": 2,
+      "externalCalls": 0,
+      "totalCalls": 2,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [],
+      "code": "    const fetchStats = async () => {\n        try {\n            const [gigsRes, reviewRes, docsRes] = await Promise.all([\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'available'),\n                supabase.from('gigs').select('id', { count: 'exact' }).eq('status', 'pending_review'),\n                supabase.from('documents').select('id', { count: 'exact' }).eq('status', 'pending'),\n            ]);\n            setStats({\n                pendingGigs: gigsRes.count || 0,\n                pendingReview: reviewRes.count || 0,\n                pendingDocs: docsRes.count || 0,\n            });\n        } catch (err) {\n            console.error(err);\n        } finally {\n  // ..."
+    },
+    {
+      "name": "onRefresh",
+      "file": "apps/native/app/(dashboard)/admin/index.tsx",
+      "folder": "apps/native/app/(dashboard)/admin",
+      "line": 59,
+      "internalCalls": 1,
+      "externalCalls": 2,
+      "totalCalls": 3,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+          "name": "gigs.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "name": "my-work.tsx",
+          "count": 1
+        }
+      ],
+      "code": "    const onRefresh = async () => {\n        setRefreshing(true);\n        await fetchStats();\n        setRefreshing(false);\n    };"
+    },
+    {
+      "name": "onPress",
+      "file": "apps/native/app/(dashboard)/admin/index.tsx",
+      "folder": "apps/native/app/(dashboard)/admin",
+      "line": 99,
+      "internalCalls": 2,
+      "externalCalls": 0,
+      "totalCalls": 2,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "method",
+      "callers": [],
+      "code": "                                onPress={() => { }}"
+    },
+    {
+      "name": "CompanyDashboard",
+      "file": "apps/native/app/(dashboard)/company/index.tsx",
+      "folder": "apps/native/app/(dashboard)/company",
+      "line": 123,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function CompanyDashboard() {\n    const { user, signOut } = useAuth();\n    const { companyGigs, isLoading, createGig, payForGig, isPaying } = useCompanyGigs(user?.id || '');\n    const [isCreateModalVisible, setCreateModalVisible] = useState(false);\n    const [expandedMapGigId, setExpandedMapGigId] = useState<string | null>(null);\n\n    const handleCreateGig = useCallback(\n        async (data: any) => {\n            await createGig({ ...data, company_id: user?.id as string });\n            setCreateModalVisible(false);\n        },\n        [createGig, user?.id]\n    );\n\n    const handleToggleMap = useCallback((gigId: string) => {\n  // ..."
+    },
+    {
+      "name": "keyExtractor",
+      "file": "apps/native/app/(dashboard)/company/index.tsx",
+      "folder": "apps/native/app/(dashboard)/company",
+      "line": 243,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "method",
+      "callers": [],
+      "code": "                        keyExtractor={(item) => item.key}"
+    },
+    {
+      "name": "onClose",
+      "file": "apps/native/app/(dashboard)/company/index.tsx",
+      "folder": "apps/native/app/(dashboard)/company",
+      "line": 251,
+      "internalCalls": 0,
+      "externalCalls": 4,
+      "totalCalls": 4,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "method",
+      "callers": [
+        {
+          "file": "apps/native/components/CreateGigScreen.tsx",
+          "name": "CreateGigScreen.tsx",
+          "count": 4
+        }
+      ],
+      "code": "                onClose={() => setCreateModalVisible(false)}"
+    },
+    {
+      "name": "TabIcon",
+      "file": "apps/native/app/(dashboard)/freelancer/_layout.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 5,
+      "internalCalls": 4,
+      "externalCalls": 0,
+      "totalCalls": 4,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "function TabIcon({ icon: Icon, focused, label }: { icon: any; focused: boolean; label: string }) {\n    return (\n        <View className=\"items-center justify-center pt-1\">\n            <Icon\n                size={22}\n                color={focused ? '#2563eb' : '#9ca3af'}\n                strokeWidth={focused ? 2.5 : 1.8}\n            />\n            <Text\n                className={`text-[10px] mt-0.5 font-${focused ? 'bold' : 'normal'}`}\n                style={{ color: focused ? '#2563eb' : '#9ca3af' }}\n            >\n                {label}\n            </Text>\n        </View>\n  // ..."
+    },
+    {
+      "name": "FreelancerLayout",
+      "file": "apps/native/app/(dashboard)/freelancer/_layout.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 23,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function FreelancerLayout() {\n    return (\n        <Tabs\n            screenOptions={{\n                headerShown: false,\n                lazy: true,\n                freezeOnBlur: true,\n                tabBarStyle: {\n                    position: 'absolute',\n                    bottom: 0,\n                    left: 0,\n                    right: 0,\n                    height: 72,\n                    backgroundColor: '#fff',\n                    borderTopColor: '#f3f4f6',\n  // ..."
+    },
+    {
+      "name": "tabBarIcon",
+      "file": "apps/native/app/(dashboard)/freelancer/_layout.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 49,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "method",
+      "callers": [],
+      "code": "                    tabBarIcon: ({ focused }) => <TabIcon icon={Home} focused={focused} label=\"Home\" />,"
+    },
+    {
+      "name": "GigsScreen",
+      "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 89,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function GigsScreen() {\n    const { user } = useAuth();\n    const { availableGigs, isLoadingAvailable, claimGig, isClaiming, refresh } = useGigs(user?.id, {\n        loadAvailable: true,\n        loadMine: false,\n    });\n    const [refreshing, setRefreshing] = useState(false);\n\n    const onRefresh = useCallback(async () => {\n        setRefreshing(true);\n        try {\n            await refresh();\n        } finally {\n            setRefreshing(false);\n        }\n  // ..."
+    },
+    {
+      "name": "FreelancerHome",
+      "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 7,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function FreelancerHome() {\n    const router = useRouter();\n    const { user, profile, signOut } = useAuth();\n    const { availableGigs, myGigs, totalEarnings } = useGigs(user?.id);\n\n    const weeklyGoal = 1000;\n    const progress = Math.min((totalEarnings / weeklyGoal) * 100, 100);\n    const progressDisplay = Number.isFinite(progress) ? Math.round(progress) : 0;\n\n    const recentGigs = [...myGigs].slice(0, 3);\n\n    const statusColor: Record<string, string> = {\n        assigned: 'bg-blue-100 text-blue-700',\n        in_progress: 'bg-amber-100 text-amber-700',\n        pending_review: 'bg-purple-100 text-purple-700',\n  // ..."
+    },
+    {
+      "name": "MyWorkScreen",
+      "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 160,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function MyWorkScreen() {\n    const router = useRouter();\n    const { user } = useAuth();\n    const { myGigs, isLoadingMine, updateGigStatus, isUpdatingStatus, completeGig, isCompleting, refresh } = useGigs(\n        user?.id,\n        {\n            loadAvailable: false,\n            loadMine: true,\n        }\n    );\n    const [refreshing, setRefreshing] = useState(false);\n\n    const onRefresh = useCallback(async () => {\n        setRefreshing(true);\n        try {\n  // ..."
+    },
+    {
+      "name": "DocCard",
+      "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 17,
+      "internalCalls": 1,
+      "externalCalls": 0,
+      "totalCalls": 1,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "function DocCard({ userId, docType, label, icon }: { userId: string; docType: DocType; label: string; icon: string }) {\n    const [status, setStatus] = useState<'idle' | 'uploaded' | 'uploading'>('idle');\n    const [uploading, setUploading] = useState(false);\n\n    useEffect(() => {\n        supabase\n            .from('documents')\n            .select('id')\n            .eq('user_id', userId)\n            .eq('doc_type', docType)\n            .single()\n            .then(({ data }) => {\n                if (data) setStatus('uploaded');\n            });\n    }, [userId, docType]);\n  // ..."
+    },
+    {
+      "name": "handleUpload",
+      "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 33,
+      "internalCalls": 1,
+      "externalCalls": 0,
+      "totalCalls": 1,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [],
+      "code": "    const handleUpload = async () => {\n        try {\n            const result = await DocumentPicker.getDocumentAsync({\n                type: ['application/pdf', 'image/*'],\n                copyToCacheDirectory: true,\n            });\n            if (result.canceled || !result.assets?.[0]) return;\n\n            setUploading(true);\n            const file = result.assets[0];\n\n            const cloudName = process.env.EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME;\n            if (cloudName) {\n                const formData = new FormData();\n                formData.append('file', { uri: file.uri, type: file.mimeType || 'application/pdf', name: file.name } as any);\n  // ..."
+    },
+    {
+      "name": "ProfileScreen",
+      "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+      "folder": "apps/native/app/(dashboard)/freelancer",
+      "line": 120,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function ProfileScreen() {\n    const { user, profile, signOut } = useAuth();\n    const [docCount, setDocCount] = useState(0);\n\n    useEffect(() => {\n        if (!user?.id) return;\n        supabase\n            .from('documents')\n            .select('id', { count: 'exact' })\n            .eq('user_id', user.id)\n            .then(({ count }) => setDocCount(count || 0));\n    }, [user?.id]);\n\n    const totalDocs = DOC_TYPES.length;\n    const progressPercent = Math.round((docCount / totalDocs) * 100);\n  // ..."
+    },
+    {
+      "name": "RootNavigation",
+      "file": "apps/native/app/_layout.tsx",
+      "folder": "apps/native/app",
+      "line": 9,
+      "internalCalls": 1,
+      "externalCalls": 0,
+      "totalCalls": 1,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "function RootNavigation() {\n    const { user, profile, isLoading } = useAuth();\n    const router = useRouter();\n    const segments = useSegments();\n\n    useEffect(() => {\n        if (isLoading) return;\n\n        const inDashboard = segments[0] === '(dashboard)';\n        const inAuth = segments[0] === 'login' || segments[0] === 'signup';\n\n        if (user && profile) {\n            // User is logged in — redirect to their dashboard if they're on landing/auth screens\n            if (!inDashboard) {\n                if (profile.role === 'admin') router.replace('/(dashboard)/admin');\n  // ..."
+    },
+    {
+      "name": "RootLayout",
+      "file": "apps/native/app/_layout.tsx",
+      "folder": "apps/native/app",
+      "line": 38,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function RootLayout() {\n    return (\n        <SafeAreaProvider>\n            <Head>\n                <title>Middleman App | Native Portal</title>\n                <meta name=\"description\" content=\"Middleman cross-platform technician network.\" />\n            </Head>\n            <AuthProvider>\n                <RootNavigation />\n            </AuthProvider>\n        </SafeAreaProvider>\n    );\n}"
+    },
+    {
+      "name": "Home",
+      "file": "apps/native/app/index.tsx",
+      "folder": "apps/native/app",
+      "line": 7,
+      "internalCalls": 0,
+      "externalCalls": 1,
+      "totalCalls": 1,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/_layout.tsx",
+          "name": "_layout.tsx",
+          "count": 1
+        }
+      ],
+      "code": "export default function Home() {\n    return (\n        <View className=\"flex-1 items-center justify-center p-6 bg-white\">\n            <View className=\"items-center max-w-md w-full gap-y-6\">\n                <Text className=\"text-5xl font-extrabold text-gray-900 tracking-tight text-center\">\n                    Middleman\n                </Text>\n                <Text className=\"text-xl text-gray-600 text-center\">\n                    The premium ecosystem for technicians and companies.\n                </Text>\n\n                <View className=\"flex flex-col gap-4 w-full pt-4\">\n                    <Link href=\"/login\" asChild>\n                        <TouchableOpacity className=\"w-full px-6 py-4 bg-blue-600 rounded-2xl items-center\">\n                            <Text className=\"text-white font-bold text-lg\">Sign In</Text>\n  // ..."
+    },
+    {
+      "name": "LoginScreen",
+      "file": "apps/native/app/login.tsx",
+      "folder": "apps/native/app",
+      "line": 15,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function LoginScreen() {\n    const { loading, error, signIn } = useAuth();\n\n    const { control, handleSubmit, formState: { errors } } = useForm<LoginFormData>({\n        resolver: zodResolver(loginSchema),\n        defaultValues: { email: '', password: '' },\n    });\n\n    const onSubmit = async (data: LoginFormData) => {\n        try {\n            await signIn(data.email, data.password);\n            // No manual redirect needed — RootNavigation in _layout.tsx\n            // listens to onAuthStateChange and redirects automatically\n        } catch {\n            // Error shown via the `error` state from useAuth\n  // ..."
+    },
+    {
+      "name": "onSubmit",
+      "file": "apps/native/app/login.tsx",
+      "folder": "apps/native/app",
+      "line": 23,
+      "internalCalls": 1,
+      "externalCalls": 3,
+      "totalCalls": 4,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "signup.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/components/CreateGigScreen.tsx",
+          "name": "CreateGigScreen.tsx",
+          "count": 2
+        }
+      ],
+      "code": "    const onSubmit = async (data: LoginFormData) => {\n        try {\n            await signIn(data.email, data.password);\n            // No manual redirect needed — RootNavigation in _layout.tsx\n            // listens to onAuthStateChange and redirects automatically\n        } catch {\n            // Error shown via the `error` state from useAuth\n        }\n    };"
+    },
+    {
+      "name": "render",
+      "file": "apps/native/app/login.tsx",
+      "folder": "apps/native/app",
+      "line": 43,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "method",
+      "callers": [],
+      "code": "                        render={({ field: { onChange, onBlur, value } }) => (\n                            <View>\n                                <Text className=\"text-sm font-semibold text-gray-700 mb-1\">Email</Text>\n                                <TextInput\n                                    className=\"w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base\"\n                                    placeholder=\"you@example.com\"\n                                    onBlur={onBlur}\n                                    onChangeText={onChange}\n                                    value={value}\n                                    autoCapitalize=\"none\"\n                                    keyboardType=\"email-address\"\n                                    autoComplete=\"email\"\n                                />\n                                {errors.email && (\n                                    <Text className=\"text-red-500 text-xs mt-1\">{errors.email.message}</Text>\n  // ..."
+    },
+    {
+      "name": "SignupScreen",
+      "file": "apps/native/app/signup.tsx",
+      "folder": "apps/native/app",
+      "line": 24,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export default function SignupScreen() {\n    const { loading, error, signUp } = useAuth();\n    const [successMsg, setSuccessMsg] = useState<string | null>(null);\n\n    const { control, handleSubmit, reset, watch, setValue, formState: { errors } } = useForm<SignupFormData>({\n        resolver: zodResolver(signupSchema),\n        defaultValues: { fullName: '', email: '', phone: '', password: '', role: 'freelancer' },\n    });\n\n    const role = watch('role');\n\n    const onSubmit = async (data: SignupFormData) => {\n        try {\n            const result = await signUp(data.email, data.password, data.fullName, data.phone, data.role);\n            // If email confirmation is required, Supabase returns a user but no session\n  // ..."
+    },
+    {
+      "name": "CreateGigScreen",
+      "file": "apps/native/components/CreateGigScreen.tsx",
+      "folder": "apps/native/components",
+      "line": 16,
+      "internalCalls": 0,
+      "externalCalls": 1,
+      "totalCalls": 1,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "name": "index.tsx",
+          "count": 1
+        }
+      ],
+      "code": "export function CreateGigScreen({ visible, onClose, onSubmit, isLoading }: CreateGigScreenProps) {\n    const { control, handleSubmit, formState: { errors }, reset } = useForm<GigFormValues>({\n        resolver: zodResolver(gigSchema),\n        defaultValues: {\n            title: '',\n            description: '',\n            category: '',\n            location: '',\n            pay_amount: 10,\n            scheduled_at: new Date().toISOString().slice(0, 16),\n        }\n    });\n\n    const handleFormSubmit = async (data: GigFormValues) => {\n        await onSubmit(data);\n  // ..."
+    },
+    {
+      "name": "handleFormSubmit",
+      "file": "apps/native/components/CreateGigScreen.tsx",
+      "folder": "apps/native/components",
+      "line": 29,
+      "internalCalls": 1,
+      "externalCalls": 0,
+      "totalCalls": 1,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [],
+      "code": "    const handleFormSubmit = async (data: GigFormValues) => {\n        await onSubmit(data);\n        reset();\n    };"
+    },
+    {
+      "name": "onChangeText",
+      "file": "apps/native/components/CreateGigScreen.tsx",
+      "folder": "apps/native/components",
+      "line": 111,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "method",
+      "callers": [],
+      "code": "                                        onChangeText={val => onChange(Number(val))}"
+    },
+    {
+      "name": "NativeMapViewer",
+      "file": "apps/native/components/maps/NativeMapViewer.native.tsx",
+      "folder": "apps/native/components/maps",
+      "line": 12,
+      "internalCalls": 0,
+      "externalCalls": 1,
+      "totalCalls": 1,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "name": "index.tsx",
+          "count": 1
+        }
+      ],
+      "code": "export default function NativeMapViewer({ latitude: initialLat, longitude: initialLng, gigId }: NativeMapViewerProps) {\n    const [lat, setLat] = useState(initialLat || 37.7749);\n    const [lng, setLng] = useState(initialLng || -122.4194);\n\n    useEffect(() => {\n        if (!gigId) return;\n\n        const fetchCoords = async () => {\n            const { data, error } = await supabase\n                .from('gigs')\n                .select('current_lat, current_lng')\n                .eq('id', gigId)\n                .single();\n\n            if (data?.current_lat && data?.current_lng) {\n  // ..."
+    },
+    {
+      "name": "fetchCoords",
+      "file": "apps/native/components/maps/NativeMapViewer.native.tsx",
+      "folder": "apps/native/components/maps",
+      "line": 19,
+      "internalCalls": 1,
+      "externalCalls": 0,
+      "totalCalls": 1,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [],
+      "code": "        const fetchCoords = async () => {\n            const { data, error } = await supabase\n                .from('gigs')\n                .select('current_lat, current_lng')\n                .eq('id', gigId)\n                .single();\n\n            if (data?.current_lat && data?.current_lng) {\n                setLat(data.current_lat);\n                setLng(data.current_lng);\n            }\n        };"
+    },
+    {
+      "name": "AuthProvider",
+      "file": "apps/native/contexts/AuthContext.tsx",
+      "folder": "apps/native/contexts",
+      "line": 24,
+      "internalCalls": 0,
+      "externalCalls": 1,
+      "totalCalls": 1,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "apps/native/app/_layout.tsx",
+          "name": "_layout.tsx",
+          "count": 1
+        }
+      ],
+      "code": "export function AuthProvider({ children }: { children: React.ReactNode }) {\n    const [user, setUser] = useState<any | null>(null);\n    const [profile, setProfile] = useState<Profile | null>(null);\n    const [isLoading, setIsLoading] = useState(true);\n    const [loading, setLoading] = useState(false);\n    const [error, setError] = useState<string | null>(null);\n\n    const fetchProfile = useCallback(async (userId: string) => {\n        try {\n            const { data, error: profileError } = await supabase\n                .from('technicians')\n                .select('*')\n                .eq('id', userId)\n                .single();\n\n  // ..."
+    },
+    {
+      "name": "getInitialSession",
+      "file": "apps/native/contexts/AuthContext.tsx",
+      "folder": "apps/native/contexts",
+      "line": 55,
+      "internalCalls": 1,
+      "externalCalls": 0,
+      "totalCalls": 1,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [],
+      "code": "        const getInitialSession = async () => {\n            try {\n                const { data: { session } } = await supabase.auth.getSession();\n                if (!mounted) return;\n                const currentUser = session?.user ?? null;\n                setUser(currentUser);\n                if (currentUser) {\n                    await fetchProfile(currentUser.id);\n                }\n            } catch (err: any) {\n                console.warn('Initial session error:', err.message);\n            } finally {\n                if (mounted) setIsLoading(false);\n            }\n        };\n  // ..."
+    },
+    {
+      "name": "signIn",
+      "file": "apps/native/contexts/AuthContext.tsx",
+      "folder": "apps/native/contexts",
+      "line": 100,
+      "internalCalls": 1,
+      "externalCalls": 2,
+      "totalCalls": 3,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [
+        {
+          "file": "apps/native/app/login.tsx",
+          "name": "login.tsx",
+          "count": 2
+        }
+      ],
+      "code": "    const signIn = async (email: string, password: string) => {\n        setLoading(true);\n        setError(null);\n        try {\n            const { error } = await supabase.auth.signInWithPassword({ email, password });\n            if (error) throw error;\n            // onAuthStateChange will fire and update user/profile automatically\n        } catch (err: any) {\n            setError(err.message);\n            throw err;\n        } finally {\n            setLoading(false);\n        }\n    };"
+    },
+    {
+      "name": "signUp",
+      "file": "apps/native/contexts/AuthContext.tsx",
+      "folder": "apps/native/contexts",
+      "line": 115,
+      "internalCalls": 1,
+      "externalCalls": 2,
+      "totalCalls": 3,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "signup.tsx",
+          "count": 2
+        }
+      ],
+      "code": "    const signUp = async (email: string, password: string, fullName: string, phone: string, role: string) => {\n        setLoading(true);\n        setError(null);\n        try {\n            const { data, error } = await supabase.auth.signUp({\n                email,\n                password,\n                options: { data: { full_name: fullName, phone, role } }\n            });\n            if (error) throw error;\n            return data;\n        } catch (err: any) {\n            setError(err.message);\n            throw err;\n        } finally {\n  // ..."
+    },
+    {
+      "name": "signOut",
+      "file": "apps/native/contexts/AuthContext.tsx",
+      "folder": "apps/native/contexts",
+      "line": 134,
+      "internalCalls": 1,
+      "externalCalls": 8,
+      "totalCalls": 9,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/admin/index.tsx",
+          "name": "index.tsx",
+          "count": 2
+        },
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "name": "index.tsx",
+          "count": 2
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "name": "index.tsx",
+          "count": 2
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+          "name": "profile.tsx",
+          "count": 2
+        }
+      ],
+      "code": "    const signOut = async () => {\n        setLoading(true);\n        try {\n            await supabase.auth.signOut();\n            setUser(null);\n            setProfile(null);\n        } catch (err: any) {\n            console.error('Sign out error:', err.message);\n        } finally {\n            setLoading(false);\n        }\n    };"
+    },
+    {
+      "name": "useAuth",
+      "file": "apps/native/contexts/AuthContext.tsx",
+      "folder": "apps/native/contexts",
+      "line": 154,
+      "internalCalls": 0,
+      "externalCalls": 9,
+      "totalCalls": 9,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/admin/index.tsx",
+          "name": "index.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "name": "index.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+          "name": "gigs.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "name": "index.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "name": "my-work.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/profile.tsx",
+          "name": "profile.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/_layout.tsx",
+          "name": "_layout.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/login.tsx",
+          "name": "login.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/signup.tsx",
+          "name": "signup.tsx",
+          "count": 1
+        }
+      ],
+      "code": "export function useAuth(): AuthContextType {\n    const ctx = useContext(AuthContext);\n    if (!ctx) throw new Error('useAuth must be used within AuthProvider');\n    return ctx;\n}"
+    },
+    {
+      "name": "useCompanyGigs",
+      "file": "apps/native/hooks/useCompanyGigs.ts",
+      "folder": "apps/native/hooks",
+      "line": 5,
+      "internalCalls": 0,
+      "externalCalls": 2,
+      "totalCalls": 2,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "README.md",
+          "name": "README.md",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "name": "index.tsx",
+          "count": 1
+        }
+      ],
+      "code": "export function useCompanyGigs(companyId: string) {\n    const [companyGigs, setCompanyGigs] = useState<Gig[]>([]);\n    const [isLoading, setIsLoading] = useState(true);\n    const [isCreating, setIsCreating] = useState(false);\n    const [isPaying, setIsPaying] = useState(false);\n    const [error, setError] = useState<Error | null>(null);\n\n    const fetchGigs = useCallback(async () => {\n        if (!companyId) return;\n        setIsLoading(true);\n        try {\n            const { data, error } = await supabase\n                .from('gigs')\n                .select('*')\n                .eq('company_id', companyId)\n  // ..."
+    },
+    {
+      "name": "createGig",
+      "file": "apps/native/hooks/useCompanyGigs.ts",
+      "folder": "apps/native/hooks",
+      "line": 48,
+      "internalCalls": 1,
+      "externalCalls": 4,
+      "totalCalls": 5,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [
+        {
+          "file": "README.md",
+          "name": "README.md",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "name": "index.tsx",
+          "count": 3
+        }
+      ],
+      "code": "    const createGig = async (gigData: Omit<Gig, 'id' | 'created_at' | 'status'>) => {\n        setIsCreating(true);\n        try {\n            const { error } = await supabase\n                .from('gigs')\n                .insert([{\n                    ...gigData,\n                    status: 'pending_admin'\n                }]);\n            if (error) throw error;\n            await fetchGigs();\n        } catch (err: any) {\n            throw err;\n        } finally {\n            setIsCreating(false);\n  // ..."
+    },
+    {
+      "name": "payForGig",
+      "file": "apps/native/hooks/useCompanyGigs.ts",
+      "folder": "apps/native/hooks",
+      "line": 66,
+      "internalCalls": 1,
+      "externalCalls": 3,
+      "totalCalls": 4,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/company/index.tsx",
+          "name": "index.tsx",
+          "count": 3
+        }
+      ],
+      "code": "    const payForGig = async (gigId: string) => {\n        setIsPaying(true);\n        try {\n            const { error } = await supabase\n                .from('gigs')\n                .update({ status: 'available' })\n                .eq('id', gigId)\n                .eq('status', 'awaiting_payment');\n            if (error) throw error;\n            await fetchGigs();\n        } catch (err: any) {\n            throw err;\n        } finally {\n            setIsPaying(false);\n        }\n  // ..."
+    },
+    {
+      "name": "getDistanceInMeters",
+      "file": "apps/native/hooks/useGeofence.ts",
+      "folder": "apps/native/hooks",
+      "line": 5,
+      "internalCalls": 1,
+      "externalCalls": 3,
+      "totalCalls": 4,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "apps/native/tests/unit/hooks/useGeofence.test.ts",
+          "name": "useGeofence.test.ts",
+          "count": 3
+        }
+      ],
+      "code": "export function getDistanceInMeters(lat1: number, lon1: number, lat2: number, lon2: number) {\n    const R = 6371e3; // Earth radius in meters\n    const toRadians = (deg: number) => deg * (Math.PI / 180);\n\n    const phi1 = toRadians(lat1);\n    const phi2 = toRadians(lat2);\n    const deltaPhi = toRadians(lat2 - lat1);\n    const deltaLambda = toRadians(lon2 - lon1);\n\n    const a = Math.sin(deltaPhi / 2) * Math.sin(deltaPhi / 2) +\n        Math.cos(phi1) * Math.cos(phi2) *\n        Math.sin(deltaLambda / 2) * Math.sin(deltaLambda / 2);\n\n    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n    return R * c;\n  // ..."
+    },
+    {
+      "name": "toRadians",
+      "file": "apps/native/hooks/useGeofence.ts",
+      "folder": "apps/native/hooks",
+      "line": 7,
+      "internalCalls": 4,
+      "externalCalls": 0,
+      "totalCalls": 4,
+      "isExported": false,
+      "isClassMethod": false,
+      "isTopLevel": false,
+      "type": "arrow",
+      "callers": [],
+      "code": "    const toRadians = (deg: number) => deg * (Math.PI / 180);"
+    },
+    {
+      "name": "useGeofence",
+      "file": "apps/native/hooks/useGeofence.ts",
+      "folder": "apps/native/hooks",
+      "line": 32,
+      "internalCalls": 0,
+      "externalCalls": 0,
+      "totalCalls": 0,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [],
+      "code": "export function useGeofence(targetLat: number, targetLon: number, radiusMeters = 100) {\n    const [isAtJobSite, setIsAtJobSite] = useState(false);\n    const [currentDistance, setCurrentDistance] = useState<number | null>(null);\n    const [errorMsg, setErrorMsg] = useState<string | null>(null);\n\n    useEffect(() => {\n        let subscription: Location.LocationSubscription | null = null;\n\n        (async () => {\n            const { status } = await Location.requestForegroundPermissionsAsync();\n            if (status !== 'granted') {\n                setErrorMsg('Permission to access location was denied');\n                return;\n            }\n\n  // ..."
+    },
+    {
+      "name": "useGigs",
+      "file": "apps/native/hooks/useGigs.ts",
+      "folder": "apps/native/hooks",
+      "line": 28,
+      "internalCalls": 0,
+      "externalCalls": 3,
+      "totalCalls": 3,
+      "isExported": true,
+      "isClassMethod": false,
+      "isTopLevel": true,
+      "type": "function",
+      "callers": [
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/gigs.tsx",
+          "name": "gigs.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/index.tsx",
+          "name": "index.tsx",
+          "count": 1
+        },
+        {
+          "file": "apps/native/app/(dashboard)/freelancer/my-work.tsx",
+          "name": "my-work.tsx",
+          "count": 1
+        }
+      ],
+      "code": "export function useGigs(userId?: string, options: UseGigsOptions = {}) {\n    const loadAvailable = options.loadAvailable ?? true;\n    const loadMine = options.loadMine ?? true;\n    const realtime = options.realtime ?? true;\n\n    const [availableGigs, setAvailableGigs] = useState<Gig[]>([]);\n    const [myGigs, setMyGigs] = useState<Gig[]>([]);\n    const [isLoadingAvailable, setIsLoadingAvailable] = useState(loadAvailable);\n    const [isLoadingMine, setIsLoadingMine] = useState(Boolean(loadMine && userId));\n    const [isClaiming, setIsClaiming] = useState(false);\n    const [isUpdatingStatus, setIsUpdatingStatus] = useState(false);\n    const [isCompleting, setIsCompleting] = useState(false);\n    const [error, setError] = useState<string | null>(null);\n\n    const fetchAvailableGigs = useCallback(async () => {\n  // ..."
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 import { View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Pressable } from 'react-native';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Link } from 'expo-router';
+import { FormInput } from '../components/FormInput';
 
 const signupSchema = z.object({
     fullName: z.string().min(2, 'Full name is required').max(100),
@@ -84,92 +85,44 @@ export default function SignupScreen() {
                                     </Text>
                                 </Pressable>
                             </View>
-                            <Controller
+                            <FormInput
                                 control={control}
                                 name="fullName"
-                                render={({ field: { onChange, onBlur, value } }) => (
-                                    <View>
-                                        <Text className="text-sm font-semibold text-gray-700 mb-1">Full Name</Text>
-                                        <TextInput
-                                            className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base"
-                                            placeholder="Jane Smith"
-                                            onBlur={onBlur}
-                                            onChangeText={onChange}
-                                            value={value}
-                                            autoComplete="name"
-                                        />
-                                        {errors.fullName && (
-                                            <Text className="text-red-500 text-xs mt-1">{errors.fullName.message}</Text>
-                                        )}
-                                    </View>
-                                )}
+                                label="Full Name"
+                                placeholder="Jane Smith"
+                                autoComplete="name"
+                                error={errors.fullName?.message}
                             />
 
-                            <Controller
+                            <FormInput
                                 control={control}
                                 name="email"
-                                render={({ field: { onChange, onBlur, value } }) => (
-                                    <View>
-                                        <Text className="text-sm font-semibold text-gray-700 mb-1">Email</Text>
-                                        <TextInput
-                                            className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base"
-                                            placeholder="you@example.com"
-                                            onBlur={onBlur}
-                                            onChangeText={onChange}
-                                            value={value}
-                                            autoCapitalize="none"
-                                            keyboardType="email-address"
-                                            autoComplete="email"
-                                        />
-                                        {errors.email && (
-                                            <Text className="text-red-500 text-xs mt-1">{errors.email.message}</Text>
-                                        )}
-                                    </View>
-                                )}
+                                label="Email"
+                                placeholder="you@example.com"
+                                autoCapitalize="none"
+                                keyboardType="email-address"
+                                autoComplete="email"
+                                error={errors.email?.message}
                             />
 
-                            <Controller
+                            <FormInput
                                 control={control}
                                 name="phone"
-                                render={({ field: { onChange, onBlur, value } }) => (
-                                    <View>
-                                        <Text className="text-sm font-semibold text-gray-700 mb-1">Phone Number</Text>
-                                        <TextInput
-                                            className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base"
-                                            placeholder="+12025551234"
-                                            onBlur={onBlur}
-                                            onChangeText={onChange}
-                                            value={value}
-                                            keyboardType="phone-pad"
-                                            autoComplete="tel"
-                                        />
-                                        {errors.phone && (
-                                            <Text className="text-red-500 text-xs mt-1">{errors.phone.message}</Text>
-                                        )}
-                                    </View>
-                                )}
+                                label="Phone Number"
+                                placeholder="+12025551234"
+                                keyboardType="phone-pad"
+                                autoComplete="tel"
+                                error={errors.phone?.message}
                             />
 
-                            <Controller
+                            <FormInput
                                 control={control}
                                 name="password"
-                                render={({ field: { onChange, onBlur, value } }) => (
-                                    <View>
-                                        <Text className="text-sm font-semibold text-gray-700 mb-1">Password</Text>
-                                        <TextInput
-                                            className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-base"
-                                            placeholder="••••••••••••"
-                                            secureTextEntry
-                                            onBlur={onBlur}
-                                            onChangeText={onChange}
-                                            value={value}
-                                            autoComplete="new-password"
-                                        />
-                                        {errors.password && (
-                                            <Text className="text-red-500 text-xs mt-1">{errors.password.message}</Text>
-                                        )}
-                                    </View>
-                                )}
+                                label="Password"
+                                placeholder="••••••••••••"
+                                secureTextEntry
+                                autoComplete="new-password"
+                                error={errors.password?.message}
                             />
 
                             {error && (

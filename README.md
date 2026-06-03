@@ -103,7 +103,7 @@ sequenceDiagram
 * **Security & Audit:** Data sanitization utilities (`sanitize.ts`), rate limiting (`rateLimit.ts`), and comprehensive audit logging (`auditLog.ts`).
 * **Document Handling:** Secure file uploads via `DocUploader.tsx`.
 
-### Missing Pieces & TODOs
+### Missing Pieces & Future Work
 
 * **Payment Infrastructure:** There is no visible integration for handling financial transactions (e.g., Stripe, PayPal) between companies and freelancers.
 * **Messaging System:** A real-time chat interface for companies and freelancers to communicate regarding active gigs is absent.

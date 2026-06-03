@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import { Briefcase, Search, Camera, TrendingUp } from 'lucide-react-native';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useGigs } from '../../../hooks/useGigs';
+import { DashboardActionCard } from '../../../components/DashboardActionCard';
 
 export default function FreelancerHome() {
     const router = useRouter();
@@ -73,31 +74,21 @@ export default function FreelancerHome() {
                         Performance Pulse
                     </Text>
                     <View className="flex-row gap-4">
-                        <TouchableOpacity
+                        <DashboardActionCard
                             onPress={() => router.push('/(dashboard)/freelancer/gigs')}
-                            className="flex-1 aspect-square bg-blue-50 rounded-[2.5rem] p-5 justify-between border border-blue-100 active:scale-95"
-                        >
-                            <View className="bg-blue-600 w-10 h-10 rounded-2xl items-center justify-center">
-                                <Search size={20} color="#fff" />
-                            </View>
-                            <View>
-                                <Text className="text-3xl font-black text-blue-900">{availableGigs.length}</Text>
-                                <Text className="text-xs font-bold text-blue-700 uppercase">Available</Text>
-                            </View>
-                        </TouchableOpacity>
+                            icon={<Search size={20} color="#fff" />}
+                            count={availableGigs.length}
+                            label="Available"
+                            colorScheme="blue"
+                        />
 
-                        <TouchableOpacity
+                        <DashboardActionCard
                             onPress={() => router.push('/(dashboard)/freelancer/my-work')}
-                            className="flex-1 aspect-square bg-emerald-50 rounded-[2.5rem] p-5 justify-between border border-emerald-100 active:scale-95"
-                        >
-                            <View className="bg-emerald-600 w-10 h-10 rounded-2xl items-center justify-center">
-                                <Briefcase size={20} color="#fff" />
-                            </View>
-                            <View>
-                                <Text className="text-3xl font-black text-emerald-900">{myGigs.length}</Text>
-                                <Text className="text-xs font-bold text-emerald-700 uppercase">Active</Text>
-                            </View>
-                        </TouchableOpacity>
+                            icon={<Briefcase size={20} color="#fff" />}
+                            count={myGigs.length}
+                            label="Active"
+                            colorScheme="emerald"
+                        />
                     </View>
                 </View>
 

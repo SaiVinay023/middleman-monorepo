@@ -15,6 +15,7 @@ import { useRouter } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useGigs } from '../../../hooks/useGigs';
+import { extractId } from '../../../utils/helpers';
 
 const PHASES = [
     { id: 'assigned', label: 'Assigned' },
@@ -263,7 +264,7 @@ export default function MyWorkScreen() {
         <FlatList
             className="flex-1 bg-gray-50"
             data={myGigs}
-            keyExtractor={(item) => item.id}
+            keyExtractor={extractId}
             renderItem={renderItem}
             initialNumToRender={5}
             windowSize={7}

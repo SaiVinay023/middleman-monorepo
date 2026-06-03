@@ -248,8 +248,8 @@ export default function CompanyDashboard() {
 
             <CreateGigScreen
                 visible={isCreateModalVisible}
-                onClose={() => setCreateModalVisible(false)}
-                onSubmit={handleCreateGig}
+                onDismiss={() => setCreateModalVisible(false)}
+                onGigSubmit={handleCreateGig}
                 isLoading={false}
             />
         </View>

@@ -12,6 +12,7 @@ import {
 import { MapPin, Clock, Zap, ShieldCheck, ChevronRight } from 'lucide-react-native';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useGigs } from '../../../hooks/useGigs';
+import { extractId } from '../../../utils/helpers';
 
 type Gig = {
     id: string;
@@ -135,7 +136,7 @@ export default function GigsScreen() {
         <FlatList
             className="flex-1 bg-gray-50"
             data={availableGigs}
-            keyExtractor={(item) => item.id}
+            keyExtractor={extractId}
             renderItem={renderItem}
             initialNumToRender={6}
             windowSize={7}
